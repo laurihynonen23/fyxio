@@ -169,7 +169,7 @@ export default function WorkPage() {
           <h2 className="reveal" data-delay="1" style={{ fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', fontWeight: 800, lineHeight: 1.1, letterSpacing: '-0.03em', marginBottom: '3rem' }}>
             The same principles, every time.
           </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px', background: 'var(--slate-200)', border: '1px solid var(--slate-200)', borderRadius: 16, overflow: 'hidden' }}>
+          <div className="focus-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px', background: 'var(--slate-200)', border: '1px solid var(--slate-200)', borderRadius: 16, overflow: 'hidden' }}>
             {FOCUS.map((item, i) => (
               <div key={i} className="reveal" data-delay={String(i % 3)} style={{ background: 'var(--white)', padding: '2rem' }}>
                 <h3 style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--navy)', marginBottom: '0.5rem' }}>{item.title}</h3>
@@ -197,6 +197,11 @@ export default function WorkPage() {
           </div>
         </div>
       </section>
+      <style>{`
+        @media (max-width: 768px) {
+          .focus-grid { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+      `}</style>
     </div>
   )
 }

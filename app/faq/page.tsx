@@ -14,32 +14,32 @@ const FAQS = [
   {
     group: 'Pricing & scope',
     items: [
-      { q: 'Do you work with fixed prices or hourly rates?', a: 'All projects are priced as a fixed fee agreed upfront. You know exactly what you are paying before any work starts. Hourly rates apply only to ongoing maintenance or work outside the original scope.' },
-      { q: 'What does "from" mean in your pricing?', a: 'The starting price reflects the minimum scope for that tier. Most projects land within the range listed. If your project is larger — more pages, more complexity, migration work — the final price reflects that. You get a specific number before anything starts.' },
+      { q: 'Do you work with fixed prices or hourly rates?', a: 'All projects are priced as a fixed fee agreed upfront. You know exactly what you are paying before any work starts. Hourly rates (from €80/hr) apply only to content updates or work outside the original scope.' },
+      { q: 'What does "from" mean in your pricing?', a: 'The starting price reflects the minimum scope for that tier — Starter from €699, Business from €1,290, Premium from €2,490. Most projects land close to the starting price. If your project is larger — more pages, more complexity, migration work — the final price reflects that. You get a specific number before anything starts.' },
       { q: 'Can I pay in instalments?', a: 'Yes. A deposit is required to begin — typically 50% upfront — and the remainder is due at project completion before handover.' },
     ],
   },
   {
     group: 'Process & timeline',
     items: [
-      { q: 'How long does a typical project take?', a: 'Most projects take 2–4 weeks from brief to launch. Smaller scopes can move faster if materials are ready. Larger or more complex projects take longer. Timeline is discussed and agreed before work starts.' },
-      { q: 'What do you need from me to get started?', a: 'A clear brief, your brand assets (logo, colours if you have them), any content you already have, and access to your domain registrar if we\'re launching on your existing domain. I\'ll ask specific questions during intake.' },
-      { q: 'How many rounds of revisions are included?', a: 'One structured round of revisions is included in every project. Revisions beyond that are billed at an hourly rate. The goal of one defined round is to keep feedback focused and productive.' },
+      { q: 'How long does a typical project take?', a: 'Most projects are done in a couple of days to one week. The first draft of the real site is usually built in 1–2 days once materials are in. After one round of feedback, refinements are made and the site goes live. Larger or more complex projects take longer, but the process is always fast by default.' },
+      { q: 'What do you need from me to get started?', a: 'Texts, images, videos, logo files, and any references or direction for the site. The clearer your materials are, the faster everything moves. If something is missing, I will tell you exactly what is needed before the build starts.' },
+      { q: 'How many rounds of revisions are included?', a: 'The Starter package includes one revision round. Business and Premium include two. Beyond what is included, additional revision work is billed at an hourly rate. The goal of defined revision rounds is to keep feedback focused and productive.' },
     ],
   },
   {
     group: 'Technical',
     items: [
-      { q: 'Do you build in WordPress?', a: 'No. Websites are built in clean HTML, CSS, and JavaScript — no WordPress, no page builders. If you\'re currently on WordPress and want to move away from it, that\'s one of the services I offer specifically.' },
-      { q: 'Who handles hosting?', a: 'I can set up and manage hosting for you, or configure your site to run on hosting you already have. Either works. All hosting is documented clearly so you understand what you\'re paying for and why.' },
-      { q: 'Will I be able to edit the site myself?', a: 'Depends on the setup we agree on. Some clients want full technical handover and handle everything internally. Others want the content structured so they can make text and image changes safely without touching code. We discuss this during the brief.' },
+      { q: 'Do you build in WordPress?', a: 'No. Sites are built custom using modern frameworks — no WordPress, no page builders, no templates. If you are currently on WordPress and want to move away from it, that is one of the services offered specifically.' },
+      { q: 'Who handles hosting?', a: 'There are three options. Managed hosting (from €49/mo) means everything is handled for you. Client-owned setup (€99 one-time) means your accounts, your hosting — I set it all up and hand it over cleanly. Or you can take the code directly for free and have your own technical team handle it. All options are clearly documented.' },
+      { q: 'Will I be able to edit the site myself?', a: 'Yes. A content editor is included in every package — you can update text and images without touching code. There is also an optional AI-assisted editor upgrade at €19.99/mo that adds AI-powered text improvements, tone adjustments, and SEO suggestions directly in the editor.' },
     ],
   },
   {
     group: 'Ownership & handover',
     items: [
-      { q: 'Who owns the code after the project?', a: 'You do. Full code ownership is transferred at handover. There are no licensing fees, no ongoing payments to me to keep the site running, and no lock-in of any kind.' },
-      { q: 'What if I want to switch agencies or developers later?', a: 'You can. The code is yours, it\'s clean, and it\'s documented. Any competent developer can pick it up and continue working on it. That is by design.' },
+      { q: 'Who owns the code after the project?', a: 'You do. Full code ownership is transferred at handover. There are no licensing fees, no ongoing payments to keep the site running, and no lock-in of any kind.' },
+      { q: 'What if I want to switch agencies or developers later?', a: 'You can. The code is yours, it is clean, and it is documented. Any competent developer can pick it up and continue working on it. That is by design.' },
     ],
   },
 ]

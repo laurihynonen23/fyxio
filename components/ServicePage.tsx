@@ -218,14 +218,14 @@ export default function ServicePage({ service }: { service: ServiceData }) {
           <h2 className="reveal" data-delay="1" style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 800, lineHeight: 1.1, letterSpacing: '-0.03em', marginBottom: '3rem' }}>
             Other services.
           </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
+          <div className="other-services-grid">
             {[
               { title: 'Custom Websites', href: '/services/custom-websites', num: '01' },
               { title: 'Website Redesign', href: '/services/website-redesign', num: '02' },
               { title: 'AI Build Sessions', href: '/services/ai-build-sessions', num: '03' },
               { title: 'AI Workflows', href: '/services/ai-workflows', num: '04' },
             ].filter((s) => !s.href.endsWith(service.slug)).slice(0, 3).map((s, i) => (
-              <Link key={i} href={s.href} className="reveal" data-delay={String(i)} style={{ display: 'block', padding: '2rem', border: '1px solid var(--slate-200)', borderRadius: 12, background: 'var(--white)', transition: 'box-shadow 0.2s, border-color 0.2s' }}>
+              <Link key={i} href={s.href} className="reveal other-services-card" data-delay={String(i)} style={{ display: 'block', padding: '2rem', border: '1px solid var(--slate-200)', borderRadius: 12, background: 'var(--white)', transition: 'box-shadow 0.2s, border-color 0.2s' }}>
                 <p style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--cyan)', marginBottom: '0.75rem' }}>{s.num}</p>
                 <p style={{ fontSize: '1.0625rem', fontWeight: 700, color: 'var(--navy)', marginBottom: '0.75rem' }}>{s.title}</p>
                 <span className="link-arrow link-arrow--cyan" style={{ fontSize: '0.8125rem' }}>Learn more <Arrow /></span>
@@ -256,6 +256,29 @@ export default function ServicePage({ service }: { service: ServiceData }) {
           </div>
         </div>
       </section>
+      <style>{`
+        .other-services-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1.5rem;
+        }
+        @media (max-width: 768px) {
+          .other-services-grid {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            gap: 1rem;
+            padding-bottom: 1rem;
+            scrollbar-width: none;
+          }
+          .other-services-grid::-webkit-scrollbar { display: none; }
+          .other-services-card {
+            flex: 0 0 80vw;
+            scroll-snap-align: start;
+          }
+        }
+      `}</style>
     </div>
   )
 }

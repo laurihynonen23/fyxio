@@ -96,7 +96,7 @@ export default function ServicesPage() {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem' }}>
+          <div className="svc-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem' }}>
             {websiteServices.map((s) => (
               <Link key={s.slug} href={`/services/${s.slug}`} className="svc-card" style={{ opacity: 0, display: 'block', position: 'relative', borderRadius: 16, overflow: 'hidden', border: '1px solid var(--slate-200)', transition: 'box-shadow 0.3s, border-color 0.3s' }}>
                 <div style={{ aspectRatio: '16/7', position: 'relative', overflow: 'hidden' }}>
@@ -130,7 +130,7 @@ export default function ServicesPage() {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem' }}>
+          <div className="svc-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem' }}>
             {aiServices.map((s) => (
               <Link key={s.slug} href={`/services/${s.slug}`} className="svc-card" style={{ opacity: 0, display: 'block', position: 'relative', borderRadius: 16, overflow: 'hidden', border: '1px solid var(--slate-200)', background: 'var(--white)', transition: 'box-shadow 0.3s, border-color 0.3s' }}>
                 <div style={{ aspectRatio: '16/7', position: 'relative', overflow: 'hidden' }}>
@@ -171,6 +171,13 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+      <style>{`
+        @media (max-width: 768px) {
+          .svc-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
     </div>
   )
 }

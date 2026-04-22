@@ -51,6 +51,7 @@ export default function Nav() {
             <Link href="/pricing" className={`nav-link${pathname === '/pricing' ? ' active' : ''}`}>Pricing</Link>
             <Link href="/about" className={`nav-link${pathname === '/about' ? ' active' : ''}`}>About</Link>
             <Link href="/faq" className={`nav-link${pathname === '/faq' ? ' active' : ''}`}>FAQ</Link>
+            <Link href="/blog" className={`nav-link${pathname.startsWith('/blog') ? ' active' : ''}`}>Blog</Link>
           </nav>
           <Link href="/contact" className="nav-cta">Get in touch</Link>
           <button
@@ -75,6 +76,7 @@ export default function Nav() {
         <Link href="/pricing" className="nav-mobile-link" onClick={closeMenu}>Pricing</Link>
         <Link href="/about" className="nav-mobile-link" onClick={closeMenu}>About</Link>
         <Link href="/faq" className="nav-mobile-link" onClick={closeMenu}>FAQ</Link>
+        <Link href="/blog" className="nav-mobile-link" onClick={closeMenu}>Blog</Link>
         <Link href="/contact" className="nav-mobile-cta" onClick={closeMenu}>Get in touch →</Link>
       </div>
     </>

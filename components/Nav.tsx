@@ -42,8 +42,8 @@ export default function Nav() {
               <div className="nav-dropdown">
                 <Link href="/services/custom-websites" className="nav-dropdown-link">Custom Websites</Link>
                 <Link href="/services/website-redesign" className="nav-dropdown-link">Website Redesign</Link>
-                <Link href="/services/wordpress-migration" className="nav-dropdown-link">WordPress Migration</Link>
-                <Link href="/services/hosting-maintenance" className="nav-dropdown-link">Hosting &amp; Maintenance</Link>
+                <Link href="/services/ai-build-sessions" className="nav-dropdown-link">AI Build Sessions</Link>
+                <Link href="/services/ai-workflows" className="nav-dropdown-link">AI Workflows</Link>
               </div>
             </div>
             <Link href="/process" className={`nav-link${pathname === '/process' ? ' active' : ''}`}>Process</Link>

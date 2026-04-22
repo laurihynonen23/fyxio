@@ -222,8 +222,8 @@ export default function ServicePage({ service }: { service: ServiceData }) {
             {[
               { title: 'Custom Websites', href: '/services/custom-websites', num: '01' },
               { title: 'Website Redesign', href: '/services/website-redesign', num: '02' },
-              { title: 'WordPress Migration', href: '/services/wordpress-migration', num: '03' },
-              { title: 'Hosting & Maintenance', href: '/services/hosting-maintenance', num: '04' },
+              { title: 'AI Build Sessions', href: '/services/ai-build-sessions', num: '03' },
+              { title: 'AI Workflows', href: '/services/ai-workflows', num: '04' },
             ].filter((s) => !s.href.endsWith(service.slug)).slice(0, 3).map((s, i) => (
               <Link key={i} href={s.href} className="reveal" data-delay={String(i)} style={{ display: 'block', padding: '2rem', border: '1px solid var(--slate-200)', borderRadius: 12, background: 'var(--white)', transition: 'box-shadow 0.2s, border-color 0.2s' }}>
                 <p style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--cyan)', marginBottom: '0.75rem' }}>{s.num}</p>

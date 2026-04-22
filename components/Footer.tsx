@@ -15,8 +15,8 @@ export default function Footer() {
               <span className="footer-col-label">Services</span>
               <Link href="/services/custom-websites" className="footer-link">Custom Websites</Link>
               <Link href="/services/website-redesign" className="footer-link">Website Redesign</Link>
-              <Link href="/services/wordpress-migration" className="footer-link">WordPress Migration</Link>
-              <Link href="/services/hosting-maintenance" className="footer-link">Hosting &amp; Maintenance</Link>
+              <Link href="/services/ai-build-sessions" className="footer-link">AI Build Sessions</Link>
+              <Link href="/services/ai-workflows" className="footer-link">AI Workflows</Link>
             </div>
             <div className="footer-col">
               <span className="footer-col-label">Company</span>
@@ -35,6 +35,7 @@ export default function Footer() {
               <span className="footer-col-label">Get in touch</span>
               <Link href="/contact" className="footer-link">Start a project</Link>
               <a href="mailto:lauri.hynonen@gmail.com" className="footer-link">lauri.hynonen@gmail.com</a>
+              <a href="https://www.linkedin.com/in/lauri-hyn%C3%B6nen-18372b22b" target="_blank" rel="noreferrer" className="footer-link">LinkedIn</a>
             </div>
           </nav>
         </div>

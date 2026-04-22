@@ -122,7 +122,7 @@ export default function WorkPage() {
               className="work-page-card"
               style={{ opacity: 0, display: 'block' }}
             >
-              <Image src="/work-imac-startup.jpg" alt="Athlos Oy website on iMac" fill sizes="100vw" style={{ objectFit: 'cover' }} />
+              <Image src="/work-athlos.png" alt="Athlos Oy website" fill sizes="100vw" style={{ objectFit: 'cover', objectPosition: 'top center' }} />
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(26,23,20,0.92), rgba(26,23,20,0.1) 50%, transparent)' }} />
               <div className="work-page-body">
                 <span style={{ fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--cyan)', display: 'block', marginBottom: '0.375rem' }}>Custom Website</span>
@@ -132,6 +132,22 @@ export default function WorkPage() {
               </div>
             </a>
 
+            <a
+              href="https://valuatum-com-rebuild.vercel.app/"
+              target="_blank"
+              rel="noreferrer"
+              className="work-page-card"
+              style={{ opacity: 0, display: 'block' }}
+            >
+              <Image src="/work-valuatum.png" alt="Valuatum website" fill sizes="50vw" style={{ objectFit: 'cover', objectPosition: 'top center' }} />
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(26,23,20,0.92), rgba(26,23,20,0.1) 50%, transparent)' }} />
+              <div className="work-page-body">
+                <span style={{ fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--cyan)', display: 'block', marginBottom: '0.375rem' }}>Website Rebuild</span>
+                <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: 'white', marginBottom: '0.5rem' }}>Valuatum</h2>
+                <p style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.6)', marginBottom: '1rem' }}>Modern rebuild for a Finnish financial analysis platform serving credit risk and equity research professionals.</p>
+                <span className="link-arrow link-arrow--light">View project <Arrow /></span>
+              </div>
+            </a>
             <article className="work-page-card" style={{ opacity: 0 }}>
               <Image src="/work-laptop-outdoor.jpg" alt="" fill sizes="50vw" style={{ objectFit: 'cover', opacity: 0.6 }} aria-hidden="true" />
               <div style={{ position: 'absolute', inset: 0, background: 'rgba(26,23,20,0.55)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: '0.5rem' }}>

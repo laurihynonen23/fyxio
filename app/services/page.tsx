@@ -15,7 +15,15 @@ const Arrow = () => (
   </svg>
 )
 
-const IMGS = ['/work-imac-design.jpg', '/work-laptop-ecommerce.jpg', '/work-laptop-design.jpg', '/work-laptop-desk.jpg']
+const websiteServices = SERVICES.filter(s => s.group === 'website')
+const aiServices = SERVICES.filter(s => s.group === 'ai')
+
+const IMGS: Record<string, string> = {
+  'custom-websites': '/hero-main.png',
+  'website-redesign': '/redesign-hero.png',
+  'ai-build-sessions': '/ai-build-session-setup.png',
+  'ai-workflows': '/ai-workflows-hero.png',
+}
 
 export default function ServicesPage() {
   const rootRef = useRef<HTMLDivElement>(null)
@@ -44,7 +52,7 @@ export default function ServicesPage() {
         gsap.fromTo(card,
           { opacity: 0, y: 48 },
           { opacity: 1, y: 0, duration: 0.8, delay: i * 0.06, ease: 'power3.out',
-            scrollTrigger: { trigger: '.svc-grid', start: 'top 78%' } }
+            scrollTrigger: { trigger: card, start: 'top 82%' } }
         )
       })
     }, rootRef)
@@ -62,27 +70,37 @@ export default function ServicesPage() {
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(15,23,42,0.9) 0%, rgba(15,23,42,0.3) 100%)' }} aria-hidden="true" />
         <div className="container" style={{ position: 'relative', zIndex: 1, paddingTop: 72 }}>
           <p style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--cyan)', marginBottom: '1rem' }}>Services</p>
-          <h1 style={{ fontSize: 'clamp(3rem, 7vw, 7rem)', fontWeight: 800, color: 'white', lineHeight: 0.95, letterSpacing: '-0.04em', marginBottom: '1.5rem' }}>
-            {["Website services for", 'businesses that want', 'better.'].map((line, i) => (
+          <h1 style={{ fontSize: 'clamp(2.75rem, 6vw, 6.5rem)', fontWeight: 800, color: 'white', lineHeight: 0.95, letterSpacing: '-0.04em', marginBottom: '1.5rem' }}>
+            {['Website and AI services', 'for businesses that', 'want to move faster.'].map((line, i) => (
               <span key={i} style={{ display: 'block', overflow: 'hidden' }}>
                 <span className="sh-word" style={{ display: 'block', transform: 'translateY(110%)' }}>{line}</span>
               </span>
             ))}
           </h1>
-          <p className="sh-sub" style={{ opacity: 0, fontSize: 'clamp(1rem, 1.5vw, 1.2rem)', color: 'rgba(255,255,255,0.5)', maxWidth: '44ch', lineHeight: 1.65 }}>
-            I help companies launch websites that look stronger, feel more current, and are easier to maintain than the average template-based setup.
+          <p className="sh-sub" style={{ opacity: 0, fontSize: 'clamp(1rem, 1.5vw, 1.15rem)', color: 'rgba(255,255,255,0.5)', maxWidth: '50ch', lineHeight: 1.7 }}>
+            I build modern websites, redesign outdated ones, and help teams use AI tools to create, edit, automate, and ship work much faster than before.
           </p>
         </div>
       </section>
 
-      {/* SERVICE CARDS */}
+      {/* WEBSITE SERVICES */}
       <section className="section">
         <div className="container">
-          <div className="svc-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem' }}>
-            {SERVICES.map((s, i) => (
+          <div style={{ marginBottom: '2.5rem' }}>
+            <p className="eyebrow reveal" style={{ marginBottom: '0.75rem' }}>Website services</p>
+            <h2 className="reveal" data-delay="1" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.25rem)', fontWeight: 800, lineHeight: 1.1, letterSpacing: '-0.03em', color: 'var(--navy)', marginBottom: '0.75rem' }}>
+              Modern websites built fast.
+            </h2>
+            <p className="reveal" data-delay="2" style={{ fontSize: '1rem', color: 'var(--slate-500)', lineHeight: 1.65, maxWidth: '52ch' }}>
+              Clean launch, hosting and ownership options, and a practical editing setup included in every project.
+            </p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem' }}>
+            {websiteServices.map((s) => (
               <Link key={s.slug} href={`/services/${s.slug}`} className="svc-card" style={{ opacity: 0, display: 'block', position: 'relative', borderRadius: 16, overflow: 'hidden', border: '1px solid var(--slate-200)', transition: 'box-shadow 0.3s, border-color 0.3s' }}>
                 <div style={{ aspectRatio: '16/7', position: 'relative', overflow: 'hidden' }}>
-                  <Image src={IMGS[i]} alt="" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover', transition: 'transform 0.7s cubic-bezier(0.16,1,0.3,1)' }} />
+                  <Image src={IMGS[s.slug]} alt="" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover', transition: 'transform 0.7s cubic-bezier(0.16,1,0.3,1)' }} />
                   <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(15,23,42,0.6), transparent)' }} />
                   <div style={{ position: 'absolute', bottom: '1.5rem', left: '1.5rem' }}>
                     <p style={{ fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--cyan)', marginBottom: '0.25rem' }}>{s.num}</p>
@@ -99,26 +117,38 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* EDITING OPTIONS */}
+      {/* AI SERVICES */}
       <section className="section section--surface">
         <div className="container">
-          <div style={{ maxWidth: 640, marginBottom: '3rem' }}>
-            <p className="eyebrow reveal" style={{ marginBottom: '1rem' }}>After launch</p>
-            <h2 className="reveal" data-delay="1" style={{ fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', fontWeight: 800, lineHeight: 1.1, letterSpacing: '-0.03em' }}>
-              How ongoing edits can work.
+          <div style={{ marginBottom: '2.5rem' }}>
+            <p className="eyebrow reveal" style={{ marginBottom: '0.75rem' }}>AI services</p>
+            <h2 className="reveal" data-delay="1" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.25rem)', fontWeight: 800, lineHeight: 1.1, letterSpacing: '-0.03em', color: 'var(--navy)', marginBottom: '0.75rem' }}>
+              Hands-on AI support for building,<br />editing, and automating faster.
             </h2>
+            <p className="reveal" data-delay="2" style={{ fontSize: '1rem', color: 'var(--slate-500)', lineHeight: 1.65, maxWidth: '52ch' }}>
+              I help businesses use AI tools practically — to build, edit, automate, and create better outputs faster.
+            </p>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
-            {[
-              { letter: 'A', title: 'Fully handed over', body: 'You or your team manage updates internally. Full code ownership at handover.' },
-              { letter: 'B', title: 'Structured for easy edits', body: 'Content organised so routine updates can be made safely without technical knowledge.' },
-              { letter: 'C', title: 'Managed updates', body: 'I handle updates, improvements, and maintenance on an ongoing basis. Billed separately.' },
-            ].map((opt, i) => (
-              <div key={i} className="reveal" data-delay={String(i)} style={{ padding: '2rem', border: '1px solid var(--slate-200)', borderRadius: 12, background: 'var(--white)' }}>
-                <p style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--cyan)', marginBottom: '0.75rem' }}>{opt.letter}</p>
-                <h3 style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--navy)', marginBottom: '0.5rem' }}>{opt.title}</h3>
-                <p style={{ fontSize: '0.9rem', color: 'var(--slate-600)', lineHeight: 1.65 }}>{opt.body}</p>
-              </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem' }}>
+            {aiServices.map((s) => (
+              <Link key={s.slug} href={`/services/${s.slug}`} className="svc-card" style={{ opacity: 0, display: 'block', position: 'relative', borderRadius: 16, overflow: 'hidden', border: '1px solid var(--slate-200)', background: 'var(--white)', transition: 'box-shadow 0.3s, border-color 0.3s' }}>
+                <div style={{ aspectRatio: '16/7', position: 'relative', overflow: 'hidden' }}>
+                  <Image src={IMGS[s.slug]} alt="" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover', transition: 'transform 0.7s cubic-bezier(0.16,1,0.3,1)' }} />
+                  <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(15,23,42,0.75), transparent)' }} />
+                  <div style={{ position: 'absolute', top: '1.25rem', left: '1.5rem' }}>
+                    <span style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--navy)', background: 'var(--cyan)', padding: '0.25rem 0.625rem', borderRadius: 999 }}>AI</span>
+                  </div>
+                  <div style={{ position: 'absolute', bottom: '1.5rem', left: '1.5rem' }}>
+                    <p style={{ fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--cyan)', marginBottom: '0.25rem' }}>{s.num}</p>
+                    <h2 style={{ fontSize: 'clamp(1.25rem, 2vw, 1.625rem)', fontWeight: 800, color: 'white', lineHeight: 1.1, letterSpacing: '-0.02em' }}>{s.title}</h2>
+                  </div>
+                </div>
+                <div style={{ padding: '1.75rem' }}>
+                  <p style={{ fontSize: '0.9375rem', color: 'var(--slate-600)', lineHeight: 1.65, marginBottom: '1.25rem' }}>{s.heroDesc}</p>
+                  <span className="link-arrow link-arrow--cyan">Learn more <Arrow /></span>
+                </div>
+              </Link>
             ))}
           </div>
         </div>

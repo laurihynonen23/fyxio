@@ -14,8 +14,8 @@ const Arrow = () => (
   </svg>
 )
 
-const LinkedInIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+const LinkedInIcon = ({ size = 20 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden="true">
     <path d="M7.5 9.5V18" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
     <path d="M12 18V13.5C12 11.8431 13.3431 10.5 15 10.5C16.6569 10.5 18 11.8431 18 13.5V18" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
     <path d="M7.5 6.75C7.5 6.33579 7.16421 6 6.75 6C6.33579 6 6 6.33579 6 6.75C6 7.16421 6.33579 7.5 6.75 7.5C7.16421 7.5 7.5 7.16421 7.5 6.75Z" fill="currentColor" />
@@ -144,17 +144,6 @@ export default function AboutPage() {
                 ))}
               </div>
 
-              <div className="sh-meta" style={{ display: 'flex', gap: '0.85rem', flexWrap: 'wrap', marginTop: '2rem' }}>
-                <a
-                  href={LINKEDIN_URL}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="about-social-link about-social-link--hero"
-                >
-                  <LinkedInIcon />
-                  LinkedIn
-                </a>
-              </div>
             </div>
 
             {/* Right: manifesto quotes */}
@@ -177,6 +166,18 @@ export default function AboutPage() {
 
           </div>
         </div>
+
+        {/* LinkedIn — outside the fading content, stays visible while scrolling */}
+        <a
+          href={LINKEDIN_URL}
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Connect on LinkedIn"
+          className="about-hero-li"
+        >
+          <LinkedInIcon size={16} />
+          LinkedIn
+        </a>
       </section>
 
       {/* WHO I AM */}
@@ -201,25 +202,33 @@ export default function AboutPage() {
                 <Link href="/contact" className="btn btn-primary">
                   Start a conversation <Arrow />
                 </Link>
-                <a
-                  href={LINKEDIN_URL}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="about-social-link"
-                >
-                  <LinkedInIcon />
-                  Connect on LinkedIn
+                <a href={LINKEDIN_URL} target="_blank" rel="noreferrer" className="about-social-link">
+                  <LinkedInIcon size={18} />
+                  LinkedIn
                 </a>
               </div>
             </div>
             <div className="about-visuals" style={{ opacity: 0 }}>
               <div className="about-stage-card">
-                <Image src="/about-ignite-stage.jpeg" alt="Lauri presenting at Aalto Ignite demo day" fill sizes="(max-width: 1024px) 100vw, 620px" style={{ objectFit: 'cover' }} />
-                <div className="about-stage-overlay" />
-                <div className="about-stage-note">Aalto Ignite demo day</div>
+                <Image
+                  src="/about-ignite-stage.jpeg"
+                  alt="Lauri presenting at Aalto Ignite demo day"
+                  width={5818}
+                  height={5261}
+                  quality={90}
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
+                />
               </div>
-              <div className="about-portrait-card">
-                <Image src="/about-portrait-upright.jpeg" alt="Portrait of Lauri" fill sizes="(max-width: 1024px) 220px, 260px" style={{ objectFit: 'cover' }} />
+              <div className="about-portrait-group">
+                <div className="about-portrait-inner">
+                  <Image
+                    src="/about-portrait-suit.jpeg"
+                    alt="Portrait of Lauri"
+                    fill
+                    sizes="220px"
+                    style={{ objectFit: 'cover', objectPosition: 'top center' }}
+                  />
+                </div>
               </div>
             </div>
           </div>

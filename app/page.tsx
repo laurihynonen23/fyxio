@@ -17,44 +17,43 @@ const Arrow = () => (
 const SERVICES = [
   {
     num: '01',
-    title: 'Custom business websites',
-    desc: 'Built from scratch for companies that want a site that feels premium, modern, and aligned with the quality of their business. Not a template with a different logo.',
+    title: 'Custom website builds',
+    desc: 'For businesses that want a modern website built from scratch — not a template with a logo swap. Designed around your business, your offer, and the way you want to be seen.',
     tags: ['Design-led', 'Full ownership', 'Fast turnaround'],
-    img: '/work-imac-design.jpg',
+    img: '/hero-main.png',
     href: '/services/custom-websites',
   },
   {
     num: '02',
-    title: 'Website redesigns',
-    desc: 'For companies with an existing site that no longer reflects where the business is. Sharper hierarchy, better messaging, cleaner layouts, stronger visuals.',
-    tags: ['Visual audit', 'New architecture', 'Migration'],
-    img: '/work-laptop-ecommerce.jpg',
+    title: 'Full website redesigns',
+    desc: 'For companies with a website that no longer feels good enough. Rethink the structure, messaging, visuals, and editing setup — then rebuild into something that actually supports the business.',
+    tags: ['Visual audit', 'New architecture', 'Clean launch'],
+    img: '/redesign-hero.png',
     href: '/services/website-redesign',
   },
   {
     num: '03',
-    title: 'WordPress migration',
-    desc: "Move away from slow, cluttered WordPress setups into something cleaner and easier to manage. The domain stays the same. The headaches don't.",
-    tags: ['Content migration', 'DNS handled', 'Zero downtime'],
-    img: '/work-laptop-design.jpg',
-    href: '/services/wordpress-migration',
+    title: 'AI Build Sessions',
+    desc: 'A focused hands-on session where I set up Claude Code or Codex in your project and teach you how to make real changes yourself — to your site or anything you want to build.',
+    tags: ['Claude Code setup', 'Live walkthrough', 'Real project'],
+    img: '/ai-build-session-setup.png',
+    href: '/services/ai-build-sessions',
   },
   {
     num: '04',
-    title: 'Hosting, launch & maintenance',
-    desc: 'From deployment and DNS to content update workflows — the website is not just built well but launched and managed well too. Ownership is always clear.',
-    tags: ['DNS setup', 'Deployment', 'Documented'],
-    img: '/work-laptop-desk.jpg',
-    href: '/services/hosting-maintenance',
+    title: 'Custom AI workflows',
+    desc: 'I help identify manual, repetitive, or high-value workflows and build practical AI-assisted solutions around them — content systems, internal tools, automation flows, document workflows.',
+    tags: ['Workflow mapping', 'Practical build', 'Team handover'],
+    img: '/ai-workflows-hero.png',
+    href: '/services/ai-workflows',
   },
 ]
 
 const STEPS = [
-  { num: '01', title: 'Intake & brief', text: 'You send your current site, goals, and context. I ask targeted questions. We align on scope before any design starts.' },
-  { num: '02', title: 'Design & build', text: 'I design and build simultaneously — no handoff between designer and developer means no drift, no surprises, faster results.' },
-  { num: '03', title: 'Review & refine', text: 'One clear round of revisions. Focused feedback, concrete changes. Not an endless loop of requests.' },
-  { num: '04', title: 'Launch', text: 'Hosting, DNS, redirects, final checks — all handled. No last-minute scrambles.' },
-  { num: '05', title: 'Handover', text: 'Full code ownership, full documentation. Zero dependency on me to function.' },
+  { num: '01', title: 'Materials & direction', text: 'You send the essentials — texts, images, logo files, references, and any direction. The clearer the materials, the faster everything moves.' },
+  { num: '02', title: 'First draft build', text: 'Once materials are in, I build the real site — not a mockup, not a long design phase. Usually done in 1–2 days.' },
+  { num: '03', title: 'One refinement round', text: 'You review the draft and give one focused round of feedback. I refine based on that. No endless revision loops.' },
+  { num: '04', title: 'Launch & handover', text: 'Site goes live, everything is verified, and you get full ownership of the code, domain, and hosting setup.' },
 ]
 
 // Placeholder client names for the ticker
@@ -179,7 +178,7 @@ export default function Home() {
       <section className="hero-scene" ref={heroRef} aria-label="Hero">
         <div className="hero-bg">
           <div ref={heroPhotoRef} style={{ position: 'absolute', inset: 0 }}>
-            <Image src="/work-imac-design.jpg" alt="" fill priority sizes="100vw" className="hero-photo" aria-hidden="true" />
+            <Image src="/hero-main.png" alt="" fill priority sizes="100vw" className="hero-photo" aria-hidden="true" />
           </div>
           <div className="hero-grid" aria-hidden="true" />
           <div className="hero-gradient" aria-hidden="true" />
@@ -188,7 +187,7 @@ export default function Home() {
         <div className="hero-content" ref={heroContentRef}>
           <div className="hero-eyebrow" aria-hidden="true">
             <span className="hero-eyebrow-dot" />
-            Web design studio
+            Website builds &amp; AI services
           </div>
 
           <h1 className="hero-title">
@@ -291,7 +290,7 @@ export default function Home() {
           <div style={{ marginBottom: '3rem' }}>
             <p className="eyebrow reveal" style={{ marginBottom: '1rem' }}>What I do</p>
             <h2 className="reveal" data-delay="1" style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 800, color: 'white', lineHeight: 1.05, letterSpacing: '-0.03em' }}>
-              Four services.<br />One clear focus.
+              Websites and AI.<br />One clear focus.
             </h2>
           </div>
 
@@ -421,7 +420,7 @@ export default function Home() {
           {/* Case study card */}
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '4rem' }}>
             <article className="work-card reveal" style={{ gridColumn: '1 / -1' }}>
-              <Image src="/work-imac-startup.jpg" alt="Athlos Oy website" fill sizes="100vw" style={{ objectFit: 'cover' }} />
+              <Image src="/work-athlos.png" alt="Athlos Oy website" fill sizes="100vw" style={{ objectFit: 'cover', objectPosition: 'top center' }} />
               <div className="work-card-overlay" />
               <div className="work-card-body">
                 <span className="work-card-tag">Custom Website — Athlos Oy</span>
@@ -456,20 +455,20 @@ export default function Home() {
       {/* ── CTA ──────────────────────────────────────── */}
       <section className="cta-scene">
         <div ref={ctaBgRef} style={{ position: 'absolute', inset: 0 }}>
-          <Image src="/work-laptop-outdoor.jpg" alt="" fill sizes="100vw" style={{ objectFit: 'cover', opacity: 0.12 }} aria-hidden="true" />
+          <Image src="/redesign-hero.png" alt="" fill sizes="100vw" style={{ objectFit: 'cover', opacity: 0.12 }} aria-hidden="true" />
         </div>
         <div className="cta-content container">
           <p className="eyebrow eyebrow--dark reveal" style={{ marginBottom: '1.5rem' }}>Ready to start?</p>
           <h2 className="cta-title">
-            {["Live in 48 hours.", 'Guaranteed.'].map((line, i) => (
+            {["Most sites live", 'in 24–48 hours.'].map((line, i) => (
               <span key={i} style={{ display: 'block', overflow: 'hidden' }}>
                 <span className="cta-word" style={{ display: 'block' }}>
-                  {i === 1 ? <em>Guaranteed.</em> : line}
+                  {i === 1 ? <em>in 24–48 hours.</em> : line}
                 </span>
               </span>
             ))}
           </h2>
-          <p className="cta-sub reveal">Send me your brief today. First draft lands in your inbox tomorrow.</p>
+          <p className="cta-sub reveal">Send me your brief and materials. The faster you move, the faster it goes live.</p>
           <div className="reveal" data-delay="2">
             <Link href="/contact" className="btn btn-primary" style={{ fontSize: '1rem', padding: '1rem 2rem' }}>
               Start a conversation <Arrow />

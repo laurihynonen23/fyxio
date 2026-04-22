@@ -50,6 +50,7 @@ export default function Nav() {
             <Link href="/work" className={`nav-link${pathname.startsWith('/work') ? ' active' : ''}`}>Work</Link>
             <Link href="/pricing" className={`nav-link${pathname === '/pricing' ? ' active' : ''}`}>Pricing</Link>
             <Link href="/about" className={`nav-link${pathname === '/about' ? ' active' : ''}`}>About</Link>
+            <Link href="/faq" className={`nav-link${pathname === '/faq' ? ' active' : ''}`}>FAQ</Link>
           </nav>
           <Link href="/contact" className="nav-cta">Get in touch</Link>
           <button

@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
-import { put } from '@vercel/blob'
 
 export const runtime = 'nodejs'
 
@@ -9,30 +8,18 @@ const TO_EMAIL = 'lauri.hynonen@gmail.com'
 export async function POST(req: NextRequest) {
   const resend = new Resend(process.env.RESEND_API_KEY)
   try {
-    const formData = await req.formData()
+    const body = await req.json()
 
     // Honeypot
-    if (formData.get('website')) return NextResponse.json({ ok: true })
+    if (body.website) return NextResponse.json({ ok: true })
 
-    const name = formData.get('name') as string
-    const email = formData.get('email') as string
-    const company = (formData.get('company') as string) || ''
-    const currentSite = (formData.get('current_site') as string) || ''
-    const inquiryType = (formData.get('inquiry_type') as string) || 'question'
-    const message = (formData.get('message') as string) || ''
-
-    // Upload files to Vercel Blob
-    const files = formData.getAll('files') as File[]
-    const uploadedUrls: { name: string; url: string }[] = []
-
-    for (const file of files) {
-      if (file instanceof File && file.size > 0) {
-        const blob = await put(`contact-uploads/${Date.now()}-${file.name}`, file, {
-          access: 'public',
-        })
-        uploadedUrls.push({ name: file.name, url: blob.url })
-      }
-    }
+    const name = body.name as string
+    const email = body.email as string
+    const company = (body.company as string) || ''
+    const currentSite = (body.current_site as string) || ''
+    const inquiryType = (body.inquiry_type as string) || 'question'
+    const message = (body.message as string) || ''
+    const uploadedUrls: { name: string; url: string }[] = body.uploaded_urls || []
 
     const isDemo = inquiryType === 'demo'
     const subject = isDemo

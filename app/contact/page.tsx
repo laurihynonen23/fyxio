@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
+import { upload } from '@vercel/blob/client'
 
 const MAX_FILE_SIZE_MB = 50
 
@@ -44,12 +45,33 @@ export default function ContactPage() {
     if (honey) return
 
     setStatus('sending')
-    const fd = new FormData(form)
-    fd.set('inquiry_type', mode)
-    files.forEach(f => fd.append('files', f))
 
     try {
-      const res = await fetch('/api/contact', { method: 'POST', body: fd })
+      // Upload files directly to Blob (bypasses serverless body limit)
+      const uploadedUrls: { name: string; url: string }[] = []
+      for (const file of files) {
+        const blob = await upload(`contact-uploads/${Date.now()}-${file.name}`, file, {
+          access: 'public',
+          handleUploadUrl: '/api/upload',
+        })
+        uploadedUrls.push({ name: file.name, url: blob.url })
+      }
+
+      const payload = {
+        name: (form.elements.namedItem('name') as HTMLInputElement).value,
+        email: (form.elements.namedItem('email') as HTMLInputElement).value,
+        company: (form.elements.namedItem('company') as HTMLInputElement).value,
+        current_site: (form.elements.namedItem('current_site') as HTMLInputElement).value,
+        message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
+        inquiry_type: mode,
+        uploaded_urls: uploadedUrls,
+      }
+
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
       if (!res.ok) throw new Error('server error')
       setStatus('sent')
     } catch {

@@ -332,7 +332,7 @@ export default function Home() {
           </div>
 
           {/* Content panel */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', alignItems: 'stretch', minHeight: 420 }}>
+          <div className="services-panel-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', alignItems: 'stretch', minHeight: 420 }}>
             {/* Left: text */}
             <div key={activeService} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', animation: 'fadeSlideIn 0.5s cubic-bezier(0.16,1,0.3,1)' }}>
               <p style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--cyan)', marginBottom: '1.25rem' }}>
@@ -492,6 +492,15 @@ export default function Home() {
         @keyframes progressBar {
           from { transform: scaleX(0); }
           to { transform: scaleX(1); }
+        }
+        @media (max-width: 768px) {
+          .services-panel-grid {
+            grid-template-columns: 1fr !important;
+            min-height: unset !important;
+          }
+          .services-panel-grid > div:last-child {
+            min-height: 280px !important;
+          }
         }
       `}</style>
     </>

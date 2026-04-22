@@ -4,10 +4,10 @@ import { put } from '@vercel/blob'
 
 export const runtime = 'nodejs'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
 const TO_EMAIL = 'lauri.hynonen@gmail.com'
 
 export async function POST(req: NextRequest) {
+  const resend = new Resend(process.env.RESEND_API_KEY)
   try {
     const formData = await req.formData()
 

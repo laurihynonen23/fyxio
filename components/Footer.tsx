@@ -40,7 +40,7 @@ export default function Footer() {
           </nav>
         </div>
         <div className="footer-bottom">
-          <p className="footer-copy">© 2025 Fyxio. All rights reserved.</p>
+          <p className="footer-copy">© 2026 Fyxio. All rights reserved.</p>
           <nav className="footer-legal">
             <Link href="#">Privacy Policy</Link>
           </nav>

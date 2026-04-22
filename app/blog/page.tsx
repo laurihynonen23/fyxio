@@ -16,7 +16,7 @@ const ARTICLES = [
     slug: 'website-pricing-guide',
     category: 'Guide',
     title: 'Website Pricing Guide',
-    desc: 'What a professional website actually costs in 2025, why prices vary so much, and how to tell if a quote is reasonable. Everything you need to make a confident decision.',
+    desc: 'What a professional website actually costs in 2026, why prices vary so much, and how to tell if a quote is reasonable. Everything you need to make a confident decision.',
     readTime: '8 min read',
   },
 ]

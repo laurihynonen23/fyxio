@@ -113,7 +113,7 @@ export default function AboutPage() {
         <div style={{ position: 'absolute', left: 'calc(50% + 8rem)', top: '15%', bottom: '15%', width: '1px', background: 'rgba(196,113,74,0.12)', display: 'none' }} aria-hidden="true" />
 
         <div className="about-hero-content container" style={{ position: 'relative', zIndex: 1, paddingTop: 80 }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: '4rem', alignItems: 'center', maxWidth: '100%' }}>
+          <div className="about-hero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: '4rem', alignItems: 'center', maxWidth: '100%' }}>
 
             {/* Left: Main heading */}
             <div>

@@ -879,6 +879,8 @@ button { border: none; background: none; cursor: pointer; font: inherit; }
   .contact-grid { grid-template-columns: 1fr; }
   .footer-top { grid-template-columns: 1fr; gap: 2rem; }
   .footer-nav { grid-template-columns: 1fr 1fr; }
+  .about-hero-grid { grid-template-columns: 1fr !important; }
+  .about-hero-grid > div:last-child { min-width: 0 !important; max-width: 100% !important; }
   .about-split { grid-template-columns: 1fr; }
   .about-visuals { min-height: 0; margin-top: 1rem; }
   .about-stage-card { aspect-ratio: 4 / 5; }

@@ -387,16 +387,31 @@ export default function PricingPage() {
             <span style={{ fontSize: '0.75rem', fontWeight: 600, color: 'rgba(255,255,255,0.3)', letterSpacing: '0.06em' }}>Available as a standalone session</span>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: '5rem', alignItems: 'start' }}>
-            <div>
+          <div className="ai-session-grid">
+            {/* 1: heading + intro text */}
+            <div className="ai-text">
               <h2 className="reveal" style={{ fontSize: 'clamp(2.25rem, 4.5vw, 4.5rem)', fontWeight: 800, color: 'white', lineHeight: 0.95, letterSpacing: '-0.04em', marginBottom: '1.5rem' }}>
                 AI Build Session.<br /><em style={{ fontStyle: 'italic', color: 'var(--cyan)' }}>Take full control.</em>
               </h2>
-              <p className="reveal" style={{ fontSize: 'clamp(1rem, 1.5vw, 1.125rem)', color: 'rgba(255,255,255,0.45)', lineHeight: 1.7, maxWidth: '50ch', marginBottom: '2.5rem' }}>
+              <p className="reveal" style={{ fontSize: 'clamp(1rem, 1.5vw, 1.125rem)', color: 'rgba(255,255,255,0.45)', lineHeight: 1.7, maxWidth: '50ch' }}>
                 A focused hands-on session where I set up Claude Code or Codex in your project and teach you how to make major changes yourself — to your site or anything you want to build.
               </p>
+            </div>
 
-              <div className="reveal" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.625rem', maxWidth: 520 }}>
+            {/* 2: price card */}
+            <div className="ai-price reveal" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 20, padding: '2.5rem', minWidth: 260, textAlign: 'center' }}>
+              <p style={{ fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--cyan)', marginBottom: '1rem' }}>One-time session</p>
+              <p style={{ fontSize: 'clamp(3rem, 5vw, 4.5rem)', fontWeight: 900, color: 'white', letterSpacing: '-0.05em', lineHeight: 1, marginBottom: '0.5rem' }}>€199</p>
+              <p style={{ fontSize: '0.8125rem', color: 'rgba(255,255,255,0.3)', marginBottom: '2rem', lineHeight: 1.5 }}>Single session.<br />No subscription.</p>
+              <Link href="/contact" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
+                Book a session <Arrow />
+              </Link>
+              <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.2)', marginTop: '1rem' }}>Remote via video call</p>
+            </div>
+
+            {/* 3: bullet points */}
+            <div className="ai-bullets reveal">
+              <div className="ai-bullets-inner" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.625rem' }}>
                 {[
                   'Claude Code or Codex setup in your project',
                   'Live walkthrough — you follow along and build',
@@ -413,32 +428,23 @@ export default function PricingPage() {
                   </div>
                 ))}
               </div>
-
-              <div className="reveal" style={{ marginTop: '2rem', padding: '1rem 1.375rem', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 12 }}>
-                <p style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.25)', marginBottom: '0.625rem' }}>Before the session</p>
-                <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                  {[
-                    'Active Claude or ChatGPT subscription — you\'ll be using the tools directly',
-                    'AI tool installed on your laptop before we start',
-                    'GitHub account recommended',
-                  ].map((r, i) => (
-                    <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.8125rem', color: 'rgba(255,255,255,0.35)', lineHeight: 1.5 }}>
-                      <span style={{ color: 'var(--cyan)', flexShrink: 0, marginTop: 1 }}>·</span>
-                      {r}
-                    </li>
-                  ))}
-                </ul>
-              </div>
             </div>
 
-            <div className="reveal" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 20, padding: '2.5rem', minWidth: 260, textAlign: 'center' }}>
-              <p style={{ fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--cyan)', marginBottom: '1rem' }}>One-time session</p>
-              <p style={{ fontSize: 'clamp(3rem, 5vw, 4.5rem)', fontWeight: 900, color: 'white', letterSpacing: '-0.05em', lineHeight: 1, marginBottom: '0.5rem' }}>€199</p>
-              <p style={{ fontSize: '0.8125rem', color: 'rgba(255,255,255,0.3)', marginBottom: '2rem', lineHeight: 1.5 }}>Single session.<br />No subscription.</p>
-              <Link href="/contact" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
-                Book a session <Arrow />
-              </Link>
-              <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.2)', marginTop: '1rem' }}>Remote via video call</p>
+            {/* 4: prereqs */}
+            <div className="ai-prereqs reveal" style={{ padding: '1rem 1.375rem', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 12 }}>
+              <p style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.25)', marginBottom: '0.625rem' }}>Before the session</p>
+              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+                {[
+                  'Active Claude or ChatGPT subscription — you\'ll be using the tools directly',
+                  'AI tool installed on your laptop before we start',
+                  'GitHub account recommended',
+                ].map((r, i) => (
+                  <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.8125rem', color: 'rgba(255,255,255,0.35)', lineHeight: 1.5 }}>
+                    <span style={{ color: 'var(--cyan)', flexShrink: 0, marginTop: 1 }}>·</span>
+                    {r}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
@@ -494,6 +500,30 @@ export default function PricingPage() {
         </div>
       </section>
 
+      <style>{`
+        .ai-session-grid {
+          display: grid;
+          grid-template-columns: 1fr auto;
+          column-gap: 5rem;
+          row-gap: 2.5rem;
+          align-items: start;
+        }
+        .ai-text    { grid-column: 1; grid-row: 1; }
+        .ai-price   { grid-column: 2; grid-row: 1 / 5; align-self: start; }
+        .ai-bullets { grid-column: 1; grid-row: 2; }
+        .ai-prereqs { grid-column: 1; grid-row: 3; }
+        @media (max-width: 768px) {
+          .ai-session-grid {
+            grid-template-columns: 1fr;
+            row-gap: 1.5rem;
+          }
+          .ai-text    { grid-column: 1; grid-row: 1; }
+          .ai-price   { grid-column: 1; grid-row: 2; }
+          .ai-bullets { grid-column: 1; grid-row: 3; }
+          .ai-prereqs { grid-column: 1; grid-row: 4; }
+          .ai-bullets-inner { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     </div>
   )
 }

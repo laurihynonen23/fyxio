@@ -5,7 +5,8 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Link from 'next/link'
 import Image from 'next/image'
-import { SERVICES } from '@/lib/serviceData'
+import { useLanguage } from '@/lib/LanguageContext'
+import { translations } from '@/lib/translations'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -15,9 +16,6 @@ const Arrow = () => (
   </svg>
 )
 
-const websiteServices = SERVICES.filter(s => s.group === 'website')
-const aiServices = SERVICES.filter(s => s.group === 'ai')
-
 const IMGS: Record<string, string> = {
   'custom-websites': '/hero-main.png',
   'website-redesign': '/redesign-hero.png',
@@ -26,6 +24,11 @@ const IMGS: Record<string, string> = {
 }
 
 export default function ServicesPage() {
+  const { lang } = useLanguage()
+  const t = translations[lang].services
+  const serviceDataList = translations[lang].serviceDataList
+  const websiteServices = serviceDataList.filter(s => s.group === 'website')
+  const aiServices = serviceDataList.filter(s => s.group === 'ai')
   const rootRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -57,11 +60,10 @@ export default function ServicesPage() {
       })
     }, rootRef)
     return () => ctx.revert()
-  }, [])
+  }, [lang])
 
   return (
     <div ref={rootRef}>
-      {/* HERO */}
       <section style={{ minHeight: '60vh', background: 'var(--navy)', display: 'flex', alignItems: 'flex-end', paddingBottom: '6rem', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0 }}>
           <Image src="/work-imac-design.jpg" alt="" fill priority sizes="100vw" style={{ objectFit: 'cover', opacity: 0.12 }} aria-hidden="true" />
@@ -69,30 +71,29 @@ export default function ServicesPage() {
         <div style={{ position: 'absolute', inset: 0, backgroundImage: 'linear-gradient(rgba(34,211,238,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(34,211,238,0.03) 1px, transparent 1px)', backgroundSize: '60px 60px' }} aria-hidden="true" />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(15,23,42,0.9) 0%, rgba(15,23,42,0.3) 100%)' }} aria-hidden="true" />
         <div className="container" style={{ position: 'relative', zIndex: 1, paddingTop: 72 }}>
-          <p style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--cyan)', marginBottom: '1rem' }}>Services</p>
+          <p style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--cyan)', marginBottom: '1rem' }}>{t.eyebrow}</p>
           <h1 style={{ fontSize: 'clamp(2.75rem, 6vw, 6.5rem)', fontWeight: 800, color: 'white', lineHeight: 0.95, letterSpacing: '-0.04em', marginBottom: '1.5rem' }}>
-            {['Website and AI services', 'for businesses that', 'want to move faster.'].map((line, i) => (
+            {t.heroTitle.map((line, i) => (
               <span key={i} style={{ display: 'block', overflow: 'hidden' }}>
                 <span className="sh-word" style={{ display: 'block', transform: 'translateY(110%)' }}>{line}</span>
               </span>
             ))}
           </h1>
           <p className="sh-sub" style={{ opacity: 0, fontSize: 'clamp(1rem, 1.5vw, 1.15rem)', color: 'rgba(255,255,255,0.5)', maxWidth: '50ch', lineHeight: 1.7 }}>
-            I build modern websites, redesign outdated ones, and help teams use AI tools to create, edit, automate, and ship work much faster than before.
+            {t.heroSub}
           </p>
         </div>
       </section>
 
-      {/* WEBSITE SERVICES */}
       <section className="section">
         <div className="container">
           <div style={{ marginBottom: '2.5rem' }}>
-            <p className="eyebrow reveal" style={{ marginBottom: '0.75rem' }}>Website services</p>
+            <p className="eyebrow reveal" style={{ marginBottom: '0.75rem' }}>{t.websiteEyebrow}</p>
             <h2 className="reveal" data-delay="1" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.25rem)', fontWeight: 800, lineHeight: 1.1, letterSpacing: '-0.03em', color: 'var(--navy)', marginBottom: '0.75rem' }}>
-              Modern websites built fast.
+              {t.websiteTitle}
             </h2>
             <p className="reveal" data-delay="2" style={{ fontSize: '1rem', color: 'var(--slate-500)', lineHeight: 1.65, maxWidth: '52ch' }}>
-              Clean launch, hosting and ownership options, and a practical editing setup included in every project.
+              {t.websiteSub}
             </p>
           </div>
 
@@ -109,7 +110,7 @@ export default function ServicesPage() {
                 </div>
                 <div style={{ padding: '1.75rem' }}>
                   <p style={{ fontSize: '0.9375rem', color: 'var(--slate-600)', lineHeight: 1.65, marginBottom: '1.25rem' }}>{s.heroDesc}</p>
-                  <span className="link-arrow link-arrow--cyan">Learn more <Arrow /></span>
+                  <span className="link-arrow link-arrow--cyan">{t.learnMore} <Arrow /></span>
                 </div>
               </Link>
             ))}
@@ -117,16 +118,17 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* AI SERVICES */}
       <section className="section section--surface">
         <div className="container">
           <div style={{ marginBottom: '2.5rem' }}>
-            <p className="eyebrow reveal" style={{ marginBottom: '0.75rem' }}>AI services</p>
+            <p className="eyebrow reveal" style={{ marginBottom: '0.75rem' }}>{t.aiEyebrow}</p>
             <h2 className="reveal" data-delay="1" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.25rem)', fontWeight: 800, lineHeight: 1.1, letterSpacing: '-0.03em', color: 'var(--navy)', marginBottom: '0.75rem' }}>
-              Hands-on AI support for building,<br />editing, and automating faster.
+              {t.aiTitle.split('\n').map((line, i) => (
+                <span key={i} style={{ display: 'block' }}>{line}</span>
+              ))}
             </h2>
             <p className="reveal" data-delay="2" style={{ fontSize: '1rem', color: 'var(--slate-500)', lineHeight: 1.65, maxWidth: '52ch' }}>
-              I help businesses use AI tools practically — to build, edit, automate, and create better outputs faster.
+              {t.aiSub}
             </p>
           </div>
 
@@ -146,7 +148,7 @@ export default function ServicesPage() {
                 </div>
                 <div style={{ padding: '1.75rem' }}>
                   <p style={{ fontSize: '0.9375rem', color: 'var(--slate-600)', lineHeight: 1.65, marginBottom: '1.25rem' }}>{s.heroDesc}</p>
-                  <span className="link-arrow link-arrow--cyan">Learn more <Arrow /></span>
+                  <span className="link-arrow link-arrow--cyan">{t.learnMore} <Arrow /></span>
                 </div>
               </Link>
             ))}
@@ -154,19 +156,20 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* CTA */}
       <section className="cta-scene" style={{ padding: '8rem 0' }}>
         <div style={{ position: 'absolute', inset: 0 }}>
           <Image src="/work-laptop-outdoor.jpg" alt="" fill sizes="100vw" style={{ objectFit: 'cover', opacity: 0.1 }} aria-hidden="true" />
         </div>
         <div className="cta-content container">
-          <p className="eyebrow eyebrow--dark reveal" style={{ marginBottom: '1.5rem' }}>Not sure which fits?</p>
+          <p className="eyebrow eyebrow--dark reveal" style={{ marginBottom: '1.5rem' }}>{t.ctaEyebrow}</p>
           <h2 className="cta-title reveal" data-delay="1" style={{ fontSize: 'clamp(2.5rem, 5vw, 5rem)' }}>
-            Tell me about your<br />current situation.
+            {t.ctaTitle.split('\n').map((line, i) => (
+              <span key={i} style={{ display: 'block' }}>{line}</span>
+            ))}
           </h2>
           <div className="reveal" data-delay="2" style={{ marginTop: '2rem' }}>
             <Link href="/contact" className="btn btn-primary" style={{ fontSize: '1rem', padding: '1rem 2rem' }}>
-              Ask about your project <Arrow />
+              {t.ctaBtn} <Arrow />
             </Link>
           </div>
         </div>

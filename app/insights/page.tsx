@@ -4,6 +4,8 @@ import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Link from 'next/link'
+import { useLanguage } from '@/lib/LanguageContext'
+import { translations } from '@/lib/translations'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -13,15 +15,10 @@ const Arrow = () => (
   </svg>
 )
 
-const ARTICLES = [
-  { tag: 'Comparison', title: 'WordPress vs a modern website setup: which one actually makes sense?', excerpt: 'WordPress is not automatically the right answer for every business website. In some cases it is useful. In others, it adds more maintenance than the business really needs.', slug: 'wordpress-vs-modern-website' },
-  { tag: 'Pricing', title: 'How much does a business website cost?', excerpt: 'Website pricing varies because not all projects are solving the same problem. A simple brochure site is very different from a custom redesign with migration work.', slug: 'how-much-does-a-business-website-cost' },
-  { tag: 'Launch', title: 'How to launch a website properly.', excerpt: 'For many businesses, the website itself is not the hard part — the launch is. Hosting, domain settings, DNS changes, redirects, and final checks are where confusion typically starts.', slug: 'how-to-launch-a-website-properly' },
-  { tag: 'Ownership', title: 'Who should own your domain, hosting, and website code?', excerpt: 'A lot of website problems are not design problems — they are ownership problems. Businesses often do not know who controls the domain, where the site is hosted, or how it could be moved.', slug: 'who-should-own-domain-hosting-and-code' },
-  { tag: 'Preparation', title: 'How to prepare materials for a website project.', excerpt: 'Many website projects slow down because the materials are scattered, incomplete, or constantly changing. A well-prepared content folder can save days of unnecessary back-and-forth.', slug: 'how-to-prepare-materials-for-a-website-project' },
-]
-
 export default function InsightsPage() {
+  const { lang } = useLanguage()
+  const t = translations[lang].insights
+  const ARTICLES = translations[lang].insightArticles
   const rootRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -34,22 +31,22 @@ export default function InsightsPage() {
       )
     }, rootRef)
     return () => ctx.revert()
-  }, [])
+  }, [lang])
 
   return (
     <div ref={rootRef}>
       <section className="page-hero">
         <div className="container">
-          <p style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--cyan)', marginBottom: '1rem' }}>Insights</p>
+          <p style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--cyan)', marginBottom: '1rem' }}>{t.eyebrow}</p>
           <h1 style={{ fontSize: 'clamp(3rem, 6vw, 6rem)', fontWeight: 800, color: 'var(--navy)', lineHeight: 0.95, letterSpacing: '-0.04em', marginBottom: '1.5rem' }}>
-            {['Insights on better', 'website projects.'].map((line, i) => (
+            {t.heroTitle.map((line, i) => (
               <span key={i} style={{ display: 'block', overflow: 'hidden' }}>
                 <span className="sh-word" style={{ display: 'block', transform: 'translateY(110%)' }}>{line}</span>
               </span>
             ))}
           </h1>
           <p className="sh-sub" style={{ opacity: 0, fontSize: 'clamp(1rem, 1.5vw, 1.2rem)', color: 'var(--slate-600)', maxWidth: '52ch', lineHeight: 1.65 }}>
-            Most website problems start before design. They start with unclear ownership, weak materials, bloated setups, and messy launch processes.
+            {t.heroSub}
           </p>
         </div>
       </section>
@@ -62,7 +59,7 @@ export default function InsightsPage() {
                 <span className="article-tag">{a.tag}</span>
                 <h2 className="article-title">{a.title}</h2>
                 <p className="article-excerpt">{a.excerpt}</p>
-                <span className="link-arrow link-arrow--cyan" style={{ marginTop: 'auto' }}>Read article <Arrow /></span>
+                <span className="link-arrow link-arrow--cyan" style={{ marginTop: 'auto' }}>{t.readArticle} <Arrow /></span>
               </Link>
             ))}
           </div>

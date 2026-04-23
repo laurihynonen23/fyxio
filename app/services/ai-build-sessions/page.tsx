@@ -13,7 +13,5 @@ export function generateMetadata(): Metadata {
 }
 
 export default function Page() {
-  const service = getService('ai-build-sessions')
-  if (!service) notFound()
-  return <ServicePage service={service} />
+  return <ServicePage slug="ai-build-sessions" />
 }

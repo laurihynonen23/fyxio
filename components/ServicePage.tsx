@@ -5,7 +5,8 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Link from 'next/link'
 import Image from 'next/image'
-import type { ServiceData } from '@/lib/serviceData'
+import { useLanguage } from '@/lib/LanguageContext'
+import { translations } from '@/lib/translations'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -15,13 +16,15 @@ const Arrow = () => (
   </svg>
 )
 
-export default function ServicePage({ service }: { service: ServiceData }) {
+export default function ServicePage({ slug }: { slug: string }) {
+  const { lang } = useLanguage()
+  const t = translations[lang].servicePage
+  const serviceList = translations[lang].serviceDataList
+  const service = serviceList.find(s => s.slug === slug)!
   const rootRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-
-      // Hero title entrance
       gsap.fromTo('.service-hero-title .sh-word',
         { yPercent: 110 },
         { yPercent: 0, duration: 1.1, stagger: 0.06, ease: 'power4.out', delay: 0.2 }
@@ -30,97 +33,56 @@ export default function ServicePage({ service }: { service: ServiceData }) {
         { opacity: 0, y: 20 },
         { opacity: 1, y: 0, duration: 0.9, stagger: 0.08, ease: 'power3.out', delay: 0.7 }
       )
-
-      // Hero photo parallax
-      gsap.to('.sh-hero-img',
-        {
-          yPercent: 22,
-          ease: 'none',
-          scrollTrigger: { trigger: '.service-hero', start: 'top top', end: 'bottom top', scrub: true },
-        }
-      )
-
-      // Feature images parallax
+      gsap.to('.sh-hero-img', {
+        yPercent: 22, ease: 'none',
+        scrollTrigger: { trigger: '.service-hero', start: 'top top', end: 'bottom top', scrub: true },
+      })
       document.querySelectorAll('.feature-media img').forEach((img) => {
         gsap.to(img, {
-          yPercent: 12,
-          ease: 'none',
+          yPercent: 12, ease: 'none',
           scrollTrigger: { trigger: img.parentElement, start: 'top bottom', end: 'bottom top', scrub: true },
         })
       })
-
-      // Included items stagger
       gsap.fromTo('.included-item',
         { opacity: 0, y: 32 },
-        {
-          opacity: 1, y: 0, duration: 0.7, stagger: 0.07, ease: 'power3.out',
-          scrollTrigger: { trigger: '.included-grid', start: 'top 80%' },
-        }
+        { opacity: 1, y: 0, duration: 0.7, stagger: 0.07, ease: 'power3.out',
+          scrollTrigger: { trigger: '.included-grid', start: 'top 80%' } }
       )
-
-      // Feature rows
       document.querySelectorAll('.feature-row').forEach((row) => {
         const text = row.querySelector('.feature-text')
         const media = row.querySelector('.feature-media')
-
-        if (text) gsap.fromTo(text,
-          { opacity: 0, x: -32 },
-          { opacity: 1, x: 0, duration: 0.9, ease: 'power3.out',
-            scrollTrigger: { trigger: row, start: 'top 75%' } }
-        )
-        if (media) gsap.fromTo(media,
-          { opacity: 0, scale: 0.96 },
-          { opacity: 1, scale: 1, duration: 0.9, ease: 'power3.out',
-            scrollTrigger: { trigger: row, start: 'top 75%' } }
-        )
+        if (text) gsap.fromTo(text, { opacity: 0, x: -32 }, { opacity: 1, x: 0, duration: 0.9, ease: 'power3.out', scrollTrigger: { trigger: row, start: 'top 75%' } })
+        if (media) gsap.fromTo(media, { opacity: 0, scale: 0.96 }, { opacity: 1, scale: 1, duration: 0.9, ease: 'power3.out', scrollTrigger: { trigger: row, start: 'top 75%' } })
       })
-
-      // CTA
       gsap.fromTo('.service-cta-word',
         { yPercent: 110 },
-        {
-          yPercent: 0, duration: 1, stagger: 0.07, ease: 'power4.out',
-          scrollTrigger: { trigger: '.service-cta', start: 'top 72%' },
-        }
+        { yPercent: 0, duration: 1, stagger: 0.07, ease: 'power4.out',
+          scrollTrigger: { trigger: '.service-cta', start: 'top 72%' } }
       )
-
-      // Generic reveals
       document.querySelectorAll<HTMLElement>('.reveal').forEach((el) => {
         const delay = parseFloat(el.dataset.delay || '0') * 0.08
-        gsap.fromTo(el,
-          { opacity: 0, y: 24 },
+        gsap.fromTo(el, { opacity: 0, y: 24 },
           { opacity: 1, y: 0, duration: 0.85, delay, ease: 'power3.out',
             scrollTrigger: { trigger: el, start: 'top 86%' } }
         )
       })
-
     }, rootRef)
-
     return () => ctx.revert()
-  }, [service.slug])
+  }, [slug, lang])
 
   return (
     <div ref={rootRef}>
       {/* HERO */}
       <section className="service-hero">
         <div style={{ position: 'absolute', inset: 0 }}>
-          <Image
-            src={service.heroImg}
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            className="sh-hero-img"
-            style={{ objectFit: 'cover', opacity: 0.15 }}
-            aria-hidden="true"
-          />
+          <Image src={service.heroImg} alt="" fill priority sizes="100vw" className="sh-hero-img" style={{ objectFit: 'cover', opacity: 0.15 }} aria-hidden="true" />
         </div>
         <div className="service-hero-grid" aria-hidden="true" />
         <div className="service-hero-overlay" aria-hidden="true" />
 
         <div className="service-hero-content container">
           <p className="service-hero-eyebrow sh-meta">
-            Service {service.num} of 04
+            {t.serviceOf} {service.num} {t.of04}
           </p>
           <h1 className="service-hero-title">
             {service.title.split(' ').reduce<string[][]>((lines, word, i) => {
@@ -130,16 +92,14 @@ export default function ServicePage({ service }: { service: ServiceData }) {
               return lines
             }, []).map((words, i) => (
               <span key={i} style={{ display: 'block', overflow: 'hidden' }}>
-                <span className="sh-word" style={{ display: 'block' }}>
-                  {words.join(' ')}
-                </span>
+                <span className="sh-word" style={{ display: 'block' }}>{words.join(' ')}</span>
               </span>
             ))}
           </h1>
           <p className="service-hero-desc sh-meta">{service.heroDesc}</p>
           <div className="sh-meta" style={{ marginTop: '2rem' }}>
             <Link href="/contact" className="btn btn-primary">
-              Ask about this service <Arrow />
+              {t.askAbout} <Arrow />
             </Link>
           </div>
         </div>
@@ -148,20 +108,9 @@ export default function ServicePage({ service }: { service: ServiceData }) {
       {/* TAGLINE */}
       <section style={{ background: 'var(--slate-50)', borderBottom: '1px solid var(--slate-200)', padding: '4rem 0' }}>
         <div className="container" style={{ maxWidth: 760, textAlign: 'center' }}>
-          <p className="eyebrow reveal" style={{ marginBottom: '1rem' }}>Overview</p>
-          <h2
-            className="reveal"
-            data-delay="1"
-            style={{
-              fontSize: 'clamp(1.75rem, 3.5vw, 3rem)',
-              fontWeight: 800,
-              color: 'var(--navy)',
-              lineHeight: 1.1,
-              letterSpacing: '-0.03em',
-              marginBottom: '1.25rem',
-            }}
-          >
-            What this service is for.
+          <p className="eyebrow reveal" style={{ marginBottom: '1rem' }}>{t.overviewEyebrow}</p>
+          <h2 className="reveal" data-delay="1" style={{ fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', fontWeight: 800, color: 'var(--navy)', lineHeight: 1.1, letterSpacing: '-0.03em', marginBottom: '1.25rem' }}>
+            {t.overviewTitle}
           </h2>
           <p className="reveal" style={{ fontSize: 'clamp(1.25rem, 2.5vw, 2rem)', fontWeight: 700, color: 'var(--navy)', lineHeight: 1.35, letterSpacing: '-0.02em' }}>
             &ldquo;{service.tagline}&rdquo;
@@ -169,13 +118,31 @@ export default function ServicePage({ service }: { service: ServiceData }) {
         </div>
       </section>
 
+      {/* BEST FOR / CAN COVER */}
+      {(service.bestFor || service.canCover) && (
+        <section style={{ background: 'var(--navy)', borderBottom: '1px solid rgba(255,255,255,0.06)', padding: '3rem 0' }}>
+          <div className="container">
+            <p className="eyebrow reveal" style={{ marginBottom: '1rem', color: 'var(--cyan)' }}>
+              {service.bestFor ? t.bestFor : t.canCover}
+            </p>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+              {(service.bestFor || service.canCover || []).map((item, i) => (
+                <span key={i} className="reveal" data-delay={String(i % 4)} style={{ fontSize: '0.8125rem', fontWeight: 600, padding: '0.375rem 0.875rem', borderRadius: 100, border: '1px solid rgba(255,255,255,0.12)', color: 'rgba(255,255,255,0.55)' }}>
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* WHAT'S INCLUDED */}
       <section className="section">
         <div className="container">
           <div style={{ maxWidth: 600, marginBottom: '1rem' }}>
-            <p className="eyebrow reveal" style={{ marginBottom: '1rem' }}>What&apos;s included</p>
+            <p className="eyebrow reveal" style={{ marginBottom: '1rem' }}>{t.includedEyebrow}</p>
             <h2 className="reveal" data-delay="1" style={{ fontSize: 'clamp(1.75rem, 3.5vw, 3rem)', fontWeight: 800, lineHeight: 1.1, letterSpacing: '-0.03em' }}>
-              Everything you need.<br />Nothing you don&apos;t.
+              {t.includedTitle}<br />{t.includedTitle2}
             </h2>
           </div>
           <div className="included-grid">
@@ -214,21 +181,16 @@ export default function ServicePage({ service }: { service: ServiceData }) {
       {/* OTHER SERVICES */}
       <section className="section section--surface">
         <div className="container">
-          <p className="eyebrow reveal" style={{ marginBottom: '1rem' }}>While you&apos;re here</p>
+          <p className="eyebrow reveal" style={{ marginBottom: '1rem' }}>{t.whileHereEyebrow}</p>
           <h2 className="reveal" data-delay="1" style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 800, lineHeight: 1.1, letterSpacing: '-0.03em', marginBottom: '3rem' }}>
-            Other services.
+            {t.whileHereTitle}
           </h2>
           <div className="other-services-grid">
-            {[
-              { title: 'Custom Websites', href: '/services/custom-websites', num: '01' },
-              { title: 'Website Redesign', href: '/services/website-redesign', num: '02' },
-              { title: 'AI Build Sessions', href: '/services/ai-build-sessions', num: '03' },
-              { title: 'AI Workflows', href: '/services/ai-workflows', num: '04' },
-            ].filter((s) => !s.href.endsWith(service.slug)).slice(0, 3).map((s, i) => (
+            {t.otherServices.filter((s) => !s.href.endsWith(slug)).slice(0, 3).map((s, i) => (
               <Link key={i} href={s.href} className="reveal other-services-card" data-delay={String(i)} style={{ display: 'block', padding: '2rem', border: '1px solid var(--slate-200)', borderRadius: 12, background: 'var(--white)', transition: 'box-shadow 0.2s, border-color 0.2s' }}>
                 <p style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--cyan)', marginBottom: '0.75rem' }}>{s.num}</p>
                 <p style={{ fontSize: '1.0625rem', fontWeight: 700, color: 'var(--navy)', marginBottom: '0.75rem' }}>{s.title}</p>
-                <span className="link-arrow link-arrow--cyan" style={{ fontSize: '0.8125rem' }}>Learn more <Arrow /></span>
+                <span className="link-arrow link-arrow--cyan" style={{ fontSize: '0.8125rem' }}>{t.learnMore} <Arrow /></span>
               </Link>
             ))}
           </div>
@@ -251,7 +213,7 @@ export default function ServicePage({ service }: { service: ServiceData }) {
           <p className="cta-sub reveal">{service.cta.sub}</p>
           <div className="reveal" data-delay="1" style={{ marginTop: '2rem' }}>
             <Link href="/contact" className="btn btn-primary" style={{ fontSize: '1rem', padding: '1rem 2rem' }}>
-              Get in touch <Arrow />
+              {t.getInTouch} <Arrow />
             </Link>
           </div>
         </div>

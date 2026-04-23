@@ -5,6 +5,7 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import SmoothScroll from '@/components/SmoothScroll'
 import NavigationEvents from '@/components/NavigationEvents'
+import Providers from '@/components/Providers'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
@@ -20,13 +21,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
       </head>
       <body>
-        <SmoothScroll>
-          <a href="#main" className="skip-link">Skip to main content</a>
-          <NavigationEvents />
-          <Nav />
-          <main id="main">{children}</main>
-          <Footer />
-        </SmoothScroll>
+        <Providers>
+          <SmoothScroll>
+            <a href="#main" className="skip-link">Skip to main content</a>
+            <NavigationEvents />
+            <Nav />
+            <main id="main">{children}</main>
+            <Footer />
+          </SmoothScroll>
+        </Providers>
       </body>
     </html>
   )

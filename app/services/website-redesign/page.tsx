@@ -16,7 +16,5 @@ export function generateMetadata(): Metadata {
 }
 
 export default function Page() {
-  const service = getService('website-redesign')
-  if (!service) notFound()
-  return <ServicePage service={service} />
+  return <ServicePage slug="website-redesign" />
 }

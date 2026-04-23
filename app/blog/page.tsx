@@ -3,25 +3,13 @@
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import Image from 'next/image'
-
-const ARTICLES = [
-  {
-    slug: 'wordpress-vs-modern',
-    category: 'Comparison',
-    title: 'WordPress vs Modern Websites',
-    desc: 'Why more businesses are moving away from WordPress — and what they are moving to. A straightforward breakdown of the real differences in speed, cost, ownership, and maintenance.',
-    readTime: '6 min read',
-  },
-  {
-    slug: 'website-pricing-guide',
-    category: 'Guide',
-    title: 'Website Pricing Guide',
-    desc: 'What a professional website actually costs in 2026, why prices vary so much, and how to tell if a quote is reasonable. Everything you need to make a confident decision.',
-    readTime: '8 min read',
-  },
-]
+import { useLanguage } from '@/lib/LanguageContext'
+import { translations } from '@/lib/translations'
 
 export default function BlogPage() {
+  const { lang } = useLanguage()
+  const t = translations[lang].blog
+  const ARTICLES = translations[lang].blogArticles
   const rootRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -32,32 +20,30 @@ export default function BlogPage() {
         scrollTrigger: { trigger: '.blog-grid', start: 'top 80%' } })
     }, rootRef)
     return () => ctx.revert()
-  }, [])
+  }, [lang])
 
   return (
     <div ref={rootRef}>
-      {/* HERO */}
       <section className="page-hero--dark" style={{ position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0 }}>
           <Image src="/work-laptop-design.jpg" alt="" fill sizes="100vw" priority style={{ objectFit: 'cover', opacity: 0.15 }} aria-hidden="true" />
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, var(--navy) 50%, rgba(26,23,20,0.6) 100%)' }} />
         </div>
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <p style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--cyan)', marginBottom: '1rem' }}>Blog</p>
+          <p style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--cyan)', marginBottom: '1rem' }}>{t.eyebrow}</p>
           <h1 style={{ fontSize: 'clamp(3rem, 6vw, 6rem)', fontWeight: 800, color: 'white', lineHeight: 0.95, letterSpacing: '-0.04em', marginBottom: '1.5rem' }}>
-            {['Practical guides,', 'no fluff.'].map((line, i) => (
+            {t.heroTitle.map((line, i) => (
               <span key={i} style={{ display: 'block', overflow: 'hidden' }}>
                 <span className="sh-word" style={{ display: 'block', transform: 'translateY(110%)' }}>{line}</span>
               </span>
             ))}
           </h1>
           <p className="sh-sub" style={{ opacity: 0, fontSize: 'clamp(1rem, 1.5vw, 1.2rem)', color: 'rgba(255,255,255,0.45)', maxWidth: '44ch', lineHeight: 1.65 }}>
-            Articles on websites, pricing, and modern web tools — written for business owners, not developers.
+            {t.heroSub}
           </p>
         </div>
       </section>
 
-      {/* ARTICLES */}
       <section className="section">
         <div className="container" style={{ maxWidth: 900 }}>
           <div className="blog-grid" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
@@ -78,7 +64,6 @@ export default function BlogPage() {
                   cursor: 'default',
                 }}
               >
-                {/* Coming soon badge */}
                 <span style={{
                   position: 'absolute',
                   top: '1.5rem',
@@ -93,7 +78,7 @@ export default function BlogPage() {
                   padding: '0.3rem 0.75rem',
                   borderRadius: 999,
                 }}>
-                  Coming soon
+                  {t.comingSoon}
                 </span>
 
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>

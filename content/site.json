@@ -1,0 +1,21 @@
+{
+  "siteId": "fyxio",
+  "name": "Fyxio",
+  "defaultLocale": "en",
+  "editor": {
+    "supportedLocales": ["en"],
+    "supportedPageKeys": ["home","about","contact","faq","insights","blog","pricing","process","services","work"],
+    "supportedSectionTypes": [
+      "home-hero","home-why","home-value","home-services","home-process","home-work","home-cta",
+      "about-hero","about-bio","about-credentials","about-principles","about-cta",
+      "contact-hero",
+      "faq-hero","faq-items",
+      "insights-hero","insights-articles",
+      "blog-hero","blog-articles",
+      "pricing-hero","pricing-packages","pricing-launch","pricing-ongoing","pricing-factors","pricing-cta",
+      "process-hero","process-steps","process-total",
+      "services-hero","services-website","services-ai","services-cta",
+      "work-hero","work-projects","work-focus","work-cta"
+    ]
+  }
+}

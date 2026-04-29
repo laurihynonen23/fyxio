@@ -1,0 +1,141 @@
+{
+  "key": "home",
+  "locale": "en",
+  "route": "/",
+  "metadata": {
+    "title": "Fyxio — Premium Business Websites, Built Fast",
+    "description": "Premium business websites for companies that want better than \"just okay.\" Custom builds, redesigns, and WordPress migrations."
+  },
+  "sections": [
+    {
+      "id": "hero",
+      "type": "home-hero",
+      "visible": true,
+      "eyebrow": "Website builds & AI services",
+      "heroTitle": ["Premium", "websites,", "built fast."],
+      "heroBadge": "Most projects delivered in",
+      "heroBadgeHighlight": "24–48 hours",
+      "heroSubtitle": "For businesses that want a site that looks stronger, feels more current, and is easier to manage — without the usual 6-week agency timeline.",
+      "heroCta1": "Start a project",
+      "heroCta2": "See the work",
+      "scroll": "Scroll",
+      "marqueeItems": ["Custom websites","Redesigns","WordPress migration","Hosting & launch","24-hour delivery","Full ownership","No templates"]
+    },
+    {
+      "id": "why",
+      "type": "home-why",
+      "visible": true,
+      "eyebrow": "Why Fyxio",
+      "title": "Your website ready in",
+      "titleHighlight": "24 to 48 hours.",
+      "body": "Most agencies take 6–12 weeks. I work in focused sprints — one project at a time, no context switching, no internal handoffs. The result is faster delivery without cutting corners on quality.",
+      "stats": [
+        { "id": "stat-1", "num": "24h", "label": "First draft delivered" },
+        { "id": "stat-2", "num": "1", "label": "Project at a time" },
+        { "id": "stat-3", "num": "100%", "label": "Code ownership" },
+        { "id": "stat-4", "num": "0", "label": "Dependencies" }
+      ]
+    },
+    {
+      "id": "value",
+      "type": "home-value",
+      "visible": true,
+      "eyebrow": "What we believe",
+      "statement": ["Your website is ", "the first impression", "."],
+      "statement2": "It should earn attention",
+      "statement3": "in the first three seconds."
+    },
+    {
+      "id": "services",
+      "type": "home-services",
+      "visible": true,
+      "eyebrow": "What I do",
+      "title": "Websites and AI.",
+      "title2": "One clear focus.",
+      "serviceLabel": "SERVICE",
+      "learnMore": "Learn more",
+      "items": [
+        {
+          "id": "svc-1",
+          "num": "01",
+          "title": "Custom website builds",
+          "desc": "For businesses that want a modern website built from scratch — not a template with a logo swap. Designed around your business, your offer, and the way you want to be seen.",
+          "tags": ["Design-led","Full ownership","Fast turnaround"],
+          "img": "/hero-main.png",
+          "href": "/services/custom-websites"
+        },
+        {
+          "id": "svc-2",
+          "num": "02",
+          "title": "Full website redesigns",
+          "desc": "For companies with a website that no longer feels good enough. Rethink the structure, messaging, visuals, and editing setup — then rebuild into something that actually supports the business.",
+          "tags": ["Visual audit","New architecture","Clean launch"],
+          "img": "/redesign-hero.png",
+          "href": "/services/website-redesign"
+        },
+        {
+          "id": "svc-3",
+          "num": "03",
+          "title": "AI Build Sessions",
+          "desc": "A focused hands-on session where I set up Claude Code or Codex in your project and teach you how to make real changes yourself — to your site or anything you want to build.",
+          "tags": ["Claude Code setup","Live walkthrough","Real project"],
+          "img": "/ai-build-session-setup.png",
+          "href": "/services/ai-build-sessions"
+        },
+        {
+          "id": "svc-4",
+          "num": "04",
+          "title": "Custom AI workflows",
+          "desc": "I help identify manual, repetitive, or high-value workflows and build practical AI-assisted solutions around them — content systems, internal tools, automation flows, document workflows.",
+          "tags": ["Workflow mapping","Practical build","Team handover"],
+          "img": "/ai-workflows-hero.png",
+          "href": "/services/ai-workflows"
+        }
+      ]
+    },
+    {
+      "id": "process",
+      "type": "home-process",
+      "visible": true,
+      "eyebrow": "How it works",
+      "title": "First draft in 24 hours.",
+      "title2": "Live in 48.",
+      "seeFullProcess": "See full process →",
+      "steps": [
+        { "id": "step-1", "num": "01", "title": "Materials & direction", "text": "You send the essentials — texts, images, logo files, references, and any direction. The clearer the materials, the faster everything moves." },
+        { "id": "step-2", "num": "02", "title": "First draft build", "text": "Once materials are in, I build the real site — not a mockup, not a long design phase. Usually done in 1–2 days." },
+        { "id": "step-3", "num": "03", "title": "One refinement round", "text": "You review the draft and give one focused round of feedback. I refine based on that. No endless revision loops." },
+        { "id": "step-4", "num": "04", "title": "Launch & handover", "text": "Site goes live, everything is verified, and you get full ownership of the code, domain, and hosting setup." }
+      ]
+    },
+    {
+      "id": "work",
+      "type": "home-work",
+      "visible": true,
+      "eyebrow": "Selected work",
+      "title": "Built for businesses",
+      "title2": "across every sector.",
+      "viewMyWork": "View my work",
+      "caseStudyTag": "Custom Website — Athlos Oy",
+      "caseStudyTitle": "X-ray imaging company, Finland",
+      "caseStudyDesc": "Premium website, clean structure, credible design, full launch setup. Delivered in 3 days.",
+      "visitSite": "Visit athlos.fi",
+      "builtForBusinesses": "Built for businesses like yours",
+      "clients": [
+        "Healthcare startup","Law firm","Architecture studio","SaaS company",
+        "Consulting firm","E-commerce brand","Tech agency","Financial advisor",
+        "Creative studio","Manufacturing co.","Real estate firm","Medical clinic"
+      ]
+    },
+    {
+      "id": "cta",
+      "type": "home-cta",
+      "visible": true,
+      "eyebrow": "Ready to start?",
+      "ctaTitle": ["Most sites live", "in 24–48 hours."],
+      "ctaSub": "Send me your brief and materials. The faster you move, the faster it goes live.",
+      "startConversation": "Start a conversation",
+      "replyNote": "Reply within a few hours"
+    }
+  ]
+}

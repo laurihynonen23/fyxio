@@ -1,0 +1,51 @@
+{
+  "key": "contact",
+  "locale": "en",
+  "route": "/contact",
+  "metadata": {
+    "title": "Contact — Fyxio",
+    "description": "Ask a quick question or send your materials and get a landing page demo."
+  },
+  "sections": [
+    {
+      "id": "hero",
+      "type": "contact-hero",
+      "visible": true,
+      "eyebrow": "Let's talk",
+      "heroTitle": ["Let's talk about", "your website."],
+      "heroSubtitle": "Ask a quick question, or send your materials and I'll come back with a landing page demo.",
+      "twoWaysTitle": "Two ways\nto get started",
+      "optionALabel": "Option A",
+      "optionATitle": "Ask about your project",
+      "optionADesc": "Tell me what you need and I'll reply with what makes sense.",
+      "optionBLabel": "Option B",
+      "optionBTitle": "Get a landing page demo",
+      "optionBDesc": "Send your logo, images, videos, and old site link — I'll come back with a demo.",
+      "replyTime": "Reply within 1–2 working days",
+      "demoRequestTitle": "Demo request?",
+      "demoRequestBody": "Upload your company images, videos, and logo. Add your current website link. I'll review and come back with a landing page demo — no commitment needed.",
+      "tabQuestion": "Ask a question",
+      "tabDemo": "Request a demo",
+      "labelName": "Name",
+      "labelCompany": "Company",
+      "labelEmail": "Email",
+      "labelSite": "Current website",
+      "labelFiles": "Company images & videos",
+      "optional": "(optional)",
+      "optionalMaxFile": "(optional, max 50MB each)",
+      "dropFiles": "Drop files here or click to browse",
+      "dropFilesHint": "Images, videos, logos — anything you want on the new site",
+      "labelMessageDemo": "Anything to add?",
+      "labelMessageQuestion": "What do you need?",
+      "placeholderDemo": "Industry, tone, any specific requirements...",
+      "placeholderQuestion": "New website, redesign, question about pricing...",
+      "requiredFields": "* Required fields",
+      "sending": "Sending...",
+      "sendDemo": "Send for a demo →",
+      "sendInquiry": "Send inquiry →",
+      "successTitle": "Thanks — message received.",
+      "successBody": "I'll be in touch within 1–2 working days. If it's urgent:",
+      "errorMsg": "Something went wrong. Try again or email me directly at lauri.hynonen@gmail.com."
+    }
+  ]
+}

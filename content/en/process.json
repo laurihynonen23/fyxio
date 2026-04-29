@@ -1,0 +1,43 @@
+{
+  "key": "process",
+  "locale": "en",
+  "route": "/process",
+  "metadata": {
+    "title": "Process — Fyxio",
+    "description": "A fast process built in real days. First draft in 24 hours, live in 48."
+  },
+  "sections": [
+    {
+      "id": "hero",
+      "type": "process-hero",
+      "visible": true,
+      "eyebrow": "Process",
+      "heroTitle": ["A fast process,", "built in real days."],
+      "heroSub": "The process is simple: you send the materials, I build the first draft, we do one refinement round, and then the site goes live. Most of the speed comes from keeping the workflow clear and direct."
+    },
+    {
+      "id": "steps",
+      "type": "process-steps",
+      "visible": true,
+      "step": "Step",
+      "steps": [
+        { "id": "step-1", "num": "01", "title": "Materials & direction", "duration": "Start of project", "body": "You send the essentials: texts, images, videos, logo files, references, and any wishes for the site. The clearer the materials are, the faster everything moves. If something is missing, I will tell you directly what is needed before the build starts." },
+        { "id": "step-2", "num": "02", "title": "First draft build", "duration": "Usually 1–2 days", "body": "Once the materials are in, I build the first draft of the actual website. Not a vague mockup, not a long design phase — the real site. This is usually the fastest part when the collaboration is clear and the content is ready." },
+        { "id": "step-3", "num": "03", "title": "One refinement round", "duration": "After your feedback", "body": "You review the first draft and give one focused round of feedback. I refine the site based on that feedback and tighten the final result. The process is intentionally simple: one clear review round, not endless revision loops." },
+        { "id": "step-4", "num": "04", "title": "Launch & handover", "duration": "Final step", "body": "After the refinements are done, I handle launch, final checks, and handover. That includes publishing the site, making sure everything works properly, and handing over the finished website with clear ownership of the code, domain, and hosting setup." }
+      ]
+    },
+    {
+      "id": "total",
+      "type": "process-total",
+      "visible": true,
+      "totalEyebrow": "Total timeline",
+      "totalTitle": "Most projects are achievable in",
+      "totalTitleHighlight": "a couple of days to one week.",
+      "totalBody": "Exact timing depends mostly on two things: how large the site is, and how quickly you send materials and feedback. Smaller projects can move extremely fast. Larger projects still move quickly, but they naturally need a bit more back-and-forth.",
+      "ctaEyebrow": "Start the process",
+      "ctaTitle": "Ready to move fast?",
+      "ctaBtn": "Send your materials"
+    }
+  ]
+}

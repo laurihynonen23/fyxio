@@ -1,0 +1,61 @@
+{
+  "key": "work",
+  "locale": "en",
+  "route": "/work",
+  "metadata": {
+    "title": "Work — Fyxio",
+    "description": "Selected website projects built for businesses across every sector."
+  },
+  "sections": [
+    {
+      "id": "hero",
+      "type": "work-hero",
+      "visible": true,
+      "selectedWork": "Selected work",
+      "heroTitle": ["Every project", "has the same", "core goal."],
+      "heroSub": "Make the business look stronger online. Sharper design, cleaner structure, more credible from the first visit.",
+      "stats": [
+        { "id": "stat-1", "num": "48h", "label": "Avg. delivery" },
+        { "id": "stat-2", "num": "100%", "label": "Code ownership" },
+        { "id": "stat-3", "num": "0", "label": "Template sites" }
+      ]
+    },
+    {
+      "id": "projects",
+      "type": "work-projects",
+      "visible": true,
+      "customWebsite": "Custom Website",
+      "websiteRebuild": "Website Rebuild",
+      "athlosDesc": "Premium website for a Finnish advanced X-ray imaging company. Delivered in 3 days.",
+      "valuatumDesc": "Modern rebuild for a Finnish financial analysis platform serving credit risk and equity research professionals.",
+      "visitAthlos": "Visit athlos.fi",
+      "viewProject": "View project",
+      "comingSoon": "Coming soon",
+      "moreProjectsSoon": "More projects launching shortly"
+    },
+    {
+      "id": "focus",
+      "type": "work-focus",
+      "visible": true,
+      "focusEyebrow": "What I focus on in every project",
+      "focusTitle": "The same principles, every time.",
+      "items": [
+        { "id": "focus-1", "title": "Strong visual hierarchy", "body": "The most important information gets the most visual weight." },
+        { "id": "focus-2", "title": "Better first impressions", "body": "Visitors decide within seconds. The site earns attention fast." },
+        { "id": "focus-3", "title": "Cleaner structure", "body": "Navigation and layout that reduces thinking, not adds to it." },
+        { "id": "focus-4", "title": "Faster execution", "body": "Working quickly without cutting corners on quality or detail." },
+        { "id": "focus-5", "title": "Easier launch", "body": "Hosting, DNS, and deployment handled with a clear plan." },
+        { "id": "focus-6", "title": "Clearer ownership", "body": "Domain, hosting, code — all documented clearly at handover." }
+      ]
+    },
+    {
+      "id": "cta",
+      "type": "work-cta",
+      "visible": true,
+      "ctaEyebrow": "Want something similar?",
+      "ctaTitle": "Let's build something",
+      "ctaTitleHighlight": "worth showing.",
+      "startProject": "Start your project"
+    }
+  ]
+}

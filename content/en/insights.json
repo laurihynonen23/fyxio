@@ -1,0 +1,32 @@
+{
+  "key": "insights",
+  "locale": "en",
+  "route": "/insights",
+  "metadata": {
+    "title": "Insights — Fyxio",
+    "description": "Insights on better website projects — pricing, ownership, launch, and modern web tools."
+  },
+  "sections": [
+    {
+      "id": "hero",
+      "type": "insights-hero",
+      "visible": true,
+      "eyebrow": "Insights",
+      "heroTitle": ["Insights on better", "website projects."],
+      "heroSub": "Most website problems start before design. They start with unclear ownership, weak materials, bloated setups, and messy launch processes.",
+      "readArticle": "Read article"
+    },
+    {
+      "id": "articles",
+      "type": "insights-articles",
+      "visible": true,
+      "articles": [
+        { "id": "art-1", "tag": "Comparison", "title": "WordPress vs a modern website setup: which one actually makes sense?", "excerpt": "WordPress is not automatically the right answer for every business website. In some cases it is useful. In others, it adds more maintenance than the business really needs.", "slug": "wordpress-vs-modern-website" },
+        { "id": "art-2", "tag": "Pricing", "title": "How much does a business website cost?", "excerpt": "Website pricing varies because not all projects are solving the same problem. A simple brochure site is very different from a custom redesign with migration work.", "slug": "how-much-does-a-business-website-cost" },
+        { "id": "art-3", "tag": "Launch", "title": "How to launch a website properly.", "excerpt": "For many businesses, the website itself is not the hard part — the launch is. Hosting, domain settings, DNS changes, redirects, and final checks are where confusion typically starts.", "slug": "how-to-launch-a-website-properly" },
+        { "id": "art-4", "tag": "Ownership", "title": "Who should own your domain, hosting, and website code?", "excerpt": "A lot of website problems are not design problems — they are ownership problems. Businesses often do not know who controls the domain, where the site is hosted, or how it could be moved.", "slug": "who-should-own-domain-hosting-and-code" },
+        { "id": "art-5", "tag": "Preparation", "title": "How to prepare materials for a website project.", "excerpt": "Many website projects slow down because the materials are scattered, incomplete, or constantly changing. A well-prepared content folder can save days of unnecessary back-and-forth.", "slug": "how-to-prepare-materials-for-a-website-project" }
+      ]
+    }
+  ]
+}

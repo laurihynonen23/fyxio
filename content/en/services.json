@@ -1,0 +1,44 @@
+{
+  "key": "services",
+  "locale": "en",
+  "route": "/services",
+  "metadata": {
+    "title": "Services — Fyxio",
+    "description": "Website and AI services for businesses that want to move faster. Custom builds, redesigns, AI sessions, and custom AI workflows."
+  },
+  "sections": [
+    {
+      "id": "hero",
+      "type": "services-hero",
+      "visible": true,
+      "eyebrow": "Services",
+      "heroTitle": ["Website and AI services", "for businesses that", "want to move faster."],
+      "heroSub": "I build modern websites, redesign outdated ones, and help teams use AI tools to create, edit, automate, and ship work much faster than before."
+    },
+    {
+      "id": "website",
+      "type": "services-website",
+      "visible": true,
+      "websiteEyebrow": "Website services",
+      "websiteTitle": "Modern websites built fast.",
+      "websiteSub": "Clean launch, hosting and ownership options, and a practical editing setup included in every project.",
+      "learnMore": "Learn more"
+    },
+    {
+      "id": "ai",
+      "type": "services-ai",
+      "visible": true,
+      "aiEyebrow": "AI services",
+      "aiTitle": "Hands-on AI support for building,\nediting, and automating faster.",
+      "aiSub": "I help businesses use AI tools practically — to build, edit, automate, and create better outputs faster."
+    },
+    {
+      "id": "cta",
+      "type": "services-cta",
+      "visible": true,
+      "ctaEyebrow": "Not sure which fits?",
+      "ctaTitle": "Tell me about your\ncurrent situation.",
+      "ctaBtn": "Ask about your project"
+    }
+  ]
+}

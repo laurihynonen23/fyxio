@@ -1,0 +1,29 @@
+{
+  "key": "blog",
+  "locale": "en",
+  "route": "/blog",
+  "metadata": {
+    "title": "Blog — Fyxio",
+    "description": "Practical guides on websites, pricing, and modern web tools — written for business owners."
+  },
+  "sections": [
+    {
+      "id": "hero",
+      "type": "blog-hero",
+      "visible": true,
+      "eyebrow": "Blog",
+      "heroTitle": ["Practical guides,", "no fluff."],
+      "heroSub": "Articles on websites, pricing, and modern web tools — written for business owners, not developers.",
+      "comingSoon": "Coming soon"
+    },
+    {
+      "id": "articles",
+      "type": "blog-articles",
+      "visible": true,
+      "articles": [
+        { "id": "blog-1", "slug": "wordpress-vs-modern", "category": "Comparison", "title": "WordPress vs Modern Websites", "desc": "Why more businesses are moving away from WordPress — and what they are moving to. A straightforward breakdown of the real differences in speed, cost, ownership, and maintenance.", "readTime": "6 min read" },
+        { "id": "blog-2", "slug": "website-pricing-guide", "category": "Guide", "title": "Website Pricing Guide", "desc": "What a professional website actually costs in 2026, why prices vary so much, and how to tell if a quote is reasonable. Everything you need to make a confident decision.", "readTime": "8 min read" }
+      ]
+    }
+  ]
+}

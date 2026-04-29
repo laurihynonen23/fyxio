@@ -1,0 +1,230 @@
+{
+  "key": "pricing",
+  "locale": "en",
+  "route": "/pricing",
+  "metadata": {
+    "title": "Pricing — Fyxio",
+    "description": "Full custom website builds from €699. Transparent pricing, fixed fees, and flexible launch options."
+  },
+  "sections": [
+    {
+      "id": "hero",
+      "type": "pricing-hero",
+      "visible": true,
+      "eyebrow": "Pricing",
+      "heroTitle": ["Full custom", "website build", "from €699."],
+      "heroSubNote": "Starting prices. Final scope depends on what you need — scoped before any work starts."
+    },
+    {
+      "id": "packages",
+      "type": "pricing-packages",
+      "visible": true,
+      "packagesEyebrow": "Website packages",
+      "packagesTitle": "One-time build.\nYou own the result.",
+      "packagesNote": "Prices are starting points. Final scope depends on page count, content, launch setup, editing needs, and special features. If you already have content ready, projects can move very fast.",
+      "startWith": "Start with",
+      "bestFor": "Best for",
+      "mostPopular": "Most popular",
+      "packages": [
+        {
+          "id": "pkg-starter",
+          "tier": "Starter",
+          "price": "From €699",
+          "subtitle": "Simple website, fast launch",
+          "note": "One-time project fee",
+          "featured": false,
+          "desc": "For small businesses that need a clean, modern site quickly.",
+          "features": [
+            "Up to 5 pages",
+            "Custom design",
+            "Mobile-responsive",
+            "Contact form",
+            "Basic SEO structure",
+            "Fast launch setup",
+            "Content editor included",
+            "1 revision round"
+          ]
+        },
+        {
+          "id": "pkg-business",
+          "tier": "Business",
+          "price": "From €1,290",
+          "subtitle": "More complete, more polished",
+          "note": "One-time project fee",
+          "featured": true,
+          "badge": "Most popular",
+          "desc": "For companies that want a stronger, more complete website with better structure and a more polished first impression.",
+          "features": [
+            "Up to 10 pages",
+            "Custom design",
+            "Mobile-responsive",
+            "Contact form",
+            "Better content structure",
+            "Basic SEO structure",
+            "Fast launch setup",
+            "Editor-ready content setup",
+            "Content editor included",
+            "2 revision rounds"
+          ]
+        },
+        {
+          "id": "pkg-premium",
+          "tier": "Premium",
+          "price": "From €2,490",
+          "subtitle": "Custom scope",
+          "note": "One-time project fee",
+          "featured": false,
+          "desc": "For businesses that want a more refined, more impressive, and more custom website experience.",
+          "features": [
+            "Larger custom site",
+            "More refined visual direction",
+            "Advanced sections and interactions",
+            "Custom page layouts",
+            "Editor-ready content setup",
+            "Content editor included",
+            "Priority turnaround",
+            "2 revision rounds",
+            "Launch support"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "type": "pricing-launch",
+      "visible": true,
+      "launchEyebrow": "Launch setup",
+      "launchTitle": "Choose how you want the site\nhandled after build.",
+      "launchBody": "Some clients want everything managed. Others want to own the accounts with a clean handover. Technical teams can take the code and handle the rest.",
+      "domainNote": "Your domain always stays yours.",
+      "domainNoteSub": "We only help connect it to the new site.",
+      "options": [
+        {
+          "id": "launch-managed",
+          "title": "Managed for you",
+          "bestFor": "Non-technical clients",
+          "desc": "We host, launch, and maintain everything. You edit your own content anytime through the included editor — no code, no developer needed.",
+          "price": "From €49/mo",
+          "features": [
+            "Managed hosting setup",
+            "Domain connection support",
+            "SSL setup",
+            "Basic uptime monitoring",
+            "Edit your own content via the editor",
+            "Technical maintenance"
+          ],
+          "note": "Best if you do not want to deal with GitHub, Vercel, DNS, or technical setup."
+        },
+        {
+          "id": "launch-client-owned",
+          "title": "Client-owned setup",
+          "bestFor": "Clients who want full ownership",
+          "desc": "You own the hosting and code accounts. We set everything up and connect the site properly.",
+          "price": "€99",
+          "features": [
+            "Setup on your own GitHub / hosting account",
+            "Deployment setup",
+            "Domain and DNS guidance",
+            "Editor or content setup",
+            "Handover call"
+          ],
+          "note": "One-time fee. Best if you want long-term ownership but still want us to handle the technical launch."
+        },
+        {
+          "id": "launch-code-handover",
+          "title": "Code handover",
+          "bestFor": "Technical teams",
+          "desc": "We deliver the website code and documentation. Your team handles hosting, deployment, and maintenance.",
+          "price": "Free",
+          "oldPrice": "€49",
+          "features": [
+            "Full code handover",
+            "Build instructions",
+            "Basic documentation",
+            "Optional handover call"
+          ],
+          "note": "Best if you already have a developer or technical team."
+        }
+      ]
+    },
+    {
+      "id": "ongoing",
+      "type": "pricing-ongoing",
+      "visible": true,
+      "ongoingEyebrow": "Ongoing work",
+      "ongoingTitle": "Editing, hosting, and updates\nare flexible.",
+      "hourlyLabel": "Content updates by me",
+      "hourlyDesc": "Text edits, image swaps, new sections, new pages, and other content work can also be handled for you at an hourly rate.",
+      "hourlyPrice": "From €80/hr",
+      "aiSessionNew": "New",
+      "aiSessionAvailable": "Available as a standalone session",
+      "aiSessionTitle": "AI Build Session.",
+      "aiSessionTitleHighlight": "Take full control.",
+      "aiSessionBody": "A focused hands-on session where I set up Claude Code or Codex in your project and teach you how to make major changes yourself — to your site or anything you want to build.",
+      "aiSessionOneTime": "One-time session",
+      "aiSessionPrice": "€199",
+      "aiSessionNote": "Single session.\nNo subscription.",
+      "aiSessionBook": "Book a session",
+      "aiSessionRemote": "Remote via video call",
+      "aiSessionFeatures": [
+        "Claude Code or Codex setup in your project",
+        "Live walkthrough — you follow along and build",
+        "Learn to make big changes without a developer",
+        "Works even if you have never written code before",
+        "Covers how to add pages, sections, and features",
+        "Foundation for building your own sites later"
+      ],
+      "aiSessionPrereqLabel": "Before the session",
+      "aiSessionPrereqs": [
+        "Active Claude or ChatGPT subscription — you'll be using the tools directly",
+        "AI tool installed on your laptop before we start",
+        "GitHub account recommended"
+      ],
+      "ongoing": [
+        {
+          "id": "ongoing-ai-editor",
+          "label": "AI-ASSISTED EDITING",
+          "title": "Editor + AI",
+          "price": "€19.99/mo",
+          "body": "Upgrade your included editor with AI support for rewriting, improving, and adjusting your website content whenever you want.",
+          "features": [
+            "AI-assisted text improvements",
+            "Tone and clarity adjustments",
+            "SEO title and meta suggestions",
+            "Faster content iterations",
+            "Best for clients improving content over time"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "factors",
+      "type": "pricing-factors",
+      "visible": true,
+      "scopeEyebrow": "Scope",
+      "scopeTitle": "What affects\nthe final price?",
+      "scopeNotSureLabel": "Not sure which setup fits?",
+      "scopeNotSureTitle": "Tell me what you need.\nI'll keep it simple.",
+      "scopeNotSureBody": "Send a short brief and I'll recommend the simplest setup for your situation — without pushing unnecessary tools or complexity.",
+      "scopeAskRec": "Ask for a recommendation",
+      "factors": [
+        "Number of pages",
+        "Whether content is ready or needs editing",
+        "Amount of custom design and animation",
+        "Hosting and ownership setup",
+        "Editor or AI-editor requirements",
+        "Forms, integrations, or special features",
+        "Migration from an old site",
+        "Speed of delivery"
+      ]
+    },
+    {
+      "id": "cta",
+      "type": "pricing-cta",
+      "visible": true,
+      "ctaEyebrow": "Let's talk",
+      "ctaTitle": "Ready when you are.",
+      "getInTouch": "Get in touch"
+    }
+  ]
+}

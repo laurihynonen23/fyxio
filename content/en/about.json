@@ -1,0 +1,79 @@
+{
+  "key": "about",
+  "locale": "en",
+  "route": "/about",
+  "metadata": {
+    "title": "About — Fyxio",
+    "description": "AI-native builder combining startup execution and a strong design bar to help companies get modern websites fast."
+  },
+  "sections": [
+    {
+      "id": "hero",
+      "type": "about-hero",
+      "visible": true,
+      "eyebrow": "About",
+      "heroTitle": ["AI-native builder.", "Business-first execution."],
+      "heroSubtitle": "I combine startup execution, AI systems, and a strong design bar to help companies get professional modern websites without the slow, expensive process that used to be accepted as normal.",
+      "heroStats": [
+        { "id": "stat-1", "stat": "AI-native", "label": "Build model" },
+        { "id": "stat-2", "stat": "Finland", "label": "Based in" },
+        { "id": "stat-3", "stat": "Fast", "label": "Delivery style" }
+      ],
+      "linkedIn": "LinkedIn",
+      "manifestoQuotes": [
+        { "id": "q-1", "num": "01", "text": "A serious company should not wait a month for a clean website." },
+        { "id": "q-2", "num": "02", "text": "AI should improve the economics, not lower the standard." },
+        { "id": "q-3", "num": "03", "text": "Speed only matters if the result still feels premium." }
+      ]
+    },
+    {
+      "id": "bio",
+      "type": "about-bio",
+      "visible": true,
+      "whoIAmEyebrow": "Who I am",
+      "hiName": "Hi, I'm Lauri.",
+      "bio1": "My background sits at the intersection of AI, startups, and execution. I currently work as an AI Analyst at Valuatum, previously co-founded Emeric.ai, and went through the Aalto Ignite startup accelerator while building practical experience in product, prompts, systems, and rapid iteration.",
+      "bio2": "I studied engineering at Aalto University, which shaped how I approach work: build systems that are efficient, clear, and grounded in real constraints. That matters in websites too. A strong website is not only a visual outcome. It is structure, positioning, trust, and execution working together.",
+      "bio3": "I build websites the same way I build AI systems: fast, intentionally, and with a high quality bar. The point is not to ship something quickly just because AI makes it possible. The point is to use that leverage to produce a better result for the client.",
+      "startConversation": "Start a conversation"
+    },
+    {
+      "id": "credentials",
+      "type": "about-credentials",
+      "visible": true,
+      "relevantBackgroundEyebrow": "Relevant background",
+      "relevantBackgroundTitle": "Built on real operating experience, not generic freelancer positioning.",
+      "credentials": [
+        { "id": "cred-1", "label": "Now", "title": "AI Analyst at Valuatum", "body": "Building AI-driven tools, workflows, and automations in a real business environment where speed and practicality matter." },
+        { "id": "cred-2", "label": "Startup experience", "title": "CEO & Co-Founder of Emeric.ai", "body": "Led development of an AI agent system, worked across prompt engineering, product iteration, model testing, and execution." },
+        { "id": "cred-3", "label": "Client work", "title": "Independent website projects", "body": "Delivering client websites such as Athlos.fi using an agent-based workflow built around fast, high-quality shipping." },
+        { "id": "cred-4", "label": "Foundation", "title": "Aalto University + Aalto Ignite", "body": "Engineering background, startup accelerator experience, and practical exposure to validation, pitching, and product building." }
+      ]
+    },
+    {
+      "id": "principles",
+      "type": "about-principles",
+      "visible": true,
+      "whyStartedEyebrow": "Why I started this",
+      "whyStartedTitle": "A professional website should no longer be slow or overpriced.",
+      "whyStarted1": "In the age of AI, there is no real reason a serious company should still be stuck with an outdated website because the process is too slow, too expensive, or too complicated. The tools have changed. The expectations should change with them.",
+      "whyStarted2": "I kept seeing companies pay 5,000€ or more for website projects that dragged on for over a month, even when the scope itself was not especially large. That gap stood out to me immediately. I knew those projects could be done faster, more cleanly, and at a more reasonable price point without sacrificing design quality.",
+      "whyStarted3": "That is why I built Fyxio as a side business around a different model. I developed an agent-based workflow using tools like Claude and Codex to help with structure, iteration, implementation, and refinement. The system makes the process far more effective. The judgment, taste, and final quality bar are still mine. That combination is the point.",
+      "principles": [
+        { "id": "p-1", "title": "AI should lower friction, not standards.", "body": "Modern tools should help clients get better websites faster and more affordably, not justify average work dressed up as innovation." },
+        { "id": "p-2", "title": "Fast is now part of the value.", "body": "When the materials are ready, a professional website should move in days. Speed is no longer a luxury feature — it is part of a modern service model." },
+        { "id": "p-3", "title": "Design still needs judgment.", "body": "AI can accelerate structure, implementation, and iteration, but strong visual taste, positioning, and clarity still come from the person behind the work." },
+        { "id": "p-4", "title": "The client should feel the leverage.", "body": "The advantage of a better system should show up in the outcome: lower cost, shorter timelines, cleaner collaboration, and a more credible final site." }
+      ]
+    },
+    {
+      "id": "cta",
+      "type": "about-cta",
+      "visible": true,
+      "workTogetherEyebrow": "Work together",
+      "ctaTitle": "Let's see if it's",
+      "ctaTitleHighlight": "a good fit.",
+      "getInTouch": "Get in touch"
+    }
+  ]
+}

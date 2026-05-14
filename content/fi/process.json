@@ -1,0 +1,43 @@
+{
+  "key": "process",
+  "locale": "fi",
+  "route": "/process",
+  "metadata": {
+    "title": "Prosessi — Fyxio",
+    "description": "Nopea prosessi, rakennettu todellisissa päivissä."
+  },
+  "sections": [
+    {
+      "id": "hero",
+      "type": "process-hero",
+      "visible": true,
+      "eyebrow": "Prosessi",
+      "heroTitle": ["Nopea prosessi,", "rakennettu todellisissa päivissä."],
+      "heroSub": "Prosessi on yksinkertainen: lähetät materiaalit, rakennan ensimmäisen luonnoksen, teemme yhden viimeistelydirektiivikierroksen, ja sitten sivusto julkaistaan. Suurin osa nopeudesta tulee työnkulun pitämisestä selkeänä ja suorana."
+    },
+    {
+      "id": "steps",
+      "type": "process-steps",
+      "visible": true,
+      "step": "Vaihe",
+      "steps": [
+        { "id": "step-1", "num": "01", "title": "Materiaalit & suunta", "duration": "Projektin alku", "body": "Lähetät olennaiset: tekstit, kuvat, videot, logo-tiedostot, referenssit ja toivomukset sivustolle. Mitä selkeämmät materiaalit, sitä nopeammin kaikki liikkuu. Jos jokin puuttuu, kerron suoraan mitä tarvitaan ennen rakentamisen aloittamista." },
+        { "id": "step-2", "num": "02", "title": "Ensimmäinen luonnosrakennus", "duration": "Yleensä 1–2 päivää", "body": "Kun materiaalit ovat paikallaan, rakennan todellisen verkkosivuston ensimmäisen luonnoksen. Ei epämääräistä hahmomallinnosta, ei pitkää suunnitteluvaihetta — oikea sivusto. Tämä on yleensä nopein osa, kun yhteistyö on selkeää ja sisältö on valmis." },
+        { "id": "step-3", "num": "03", "title": "Yksi viimeistelydirektiivikierros", "duration": "Palautteesi jälkeen", "body": "Katsot ensimmäisen luonnoksen ja annat yhden selkeän palautekierroksen. Hion sivuston palautteen perusteella ja viimeistelen lopullisen tuloksen. Prosessi on tarkoituksella yksinkertainen: yksi selkeä arviointikierros, ei loputtomia revisiosilmukoita." },
+        { "id": "step-4", "num": "04", "title": "Julkaisu & luovutus", "duration": "Viimeinen vaihe", "body": "Kun hionnat on tehty, hoidan julkaisun, lopulliset tarkistukset ja luovutuksen. Tämä sisältää sivuston julkaisemisen, kaiken toimivuuden varmistamisen ja valmiin verkkosivuston luovutuksen selkeällä omistajuudella koodiin, domainiin ja hosting-asetuksiin." }
+      ]
+    },
+    {
+      "id": "total",
+      "type": "process-total",
+      "visible": true,
+      "totalEyebrow": "Kokonaisaikataulu",
+      "totalTitle": "Useimmat projektit ovat saavutettavissa",
+      "totalTitleHighlight": "muutamassa päivässä tai viikossa.",
+      "totalBody": "Tarkka ajoitus riippuu pääasiassa kahdesta asiasta: kuinka suuri sivusto on, ja kuinka nopeasti lähetät materiaalit ja palautteen. Pienemmät projektit voivat edetä erittäin nopeasti. Suuremmat projektit etenevät myös nopeasti, mutta vaativat luonnollisesti hieman enemmän edestakaista.",
+      "ctaEyebrow": "Aloita prosessi",
+      "ctaTitle": "Valmis liikkumaan nopeasti?",
+      "ctaBtn": "Lähetä materiaalisi"
+    }
+  ]
+}

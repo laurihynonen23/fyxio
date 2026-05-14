@@ -6,7 +6,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useLanguage } from '@/lib/LanguageContext'
-import { translations } from '@/lib/translations'
 import type { PageContent, PageSection } from '@/content/schema'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -21,44 +20,36 @@ function findSection<T extends PageSection['type']>(sections: PageSection[], typ
   return sections.find(s => s.type === type) as Extract<PageSection, { type: T }> | undefined
 }
 
-export default function WorkClient({ enContent }: { enContent: PageContent }) {
+export default function WorkClient({ enContent, fiContent }: { enContent: PageContent; fiContent: PageContent }) {
   const { lang } = useLanguage()
+  const content = lang === 'fi' ? fiContent : enContent
 
-  let t: typeof translations['en']['work']
-  let FOCUS: typeof translations['en']['workFocus']
+  const hero = findSection(content.sections, 'work-hero')!
+  const projects = findSection(content.sections, 'work-projects')!
+  const focus = findSection(content.sections, 'work-focus')!
+  const cta = findSection(content.sections, 'work-cta')!
 
-  if (lang === 'en') {
-    const hero = findSection(enContent.sections, 'work-hero')!
-    const projects = findSection(enContent.sections, 'work-projects')!
-    const focus = findSection(enContent.sections, 'work-focus')!
-    const cta = findSection(enContent.sections, 'work-cta')!
-
-    t = {
-      selectedWork: hero.selectedWork,
-      heroTitle: hero.heroTitle,
-      heroSub: hero.heroSub,
-      // stats used as [num, label][] — adapt from {id,num,label}[]
-      stats: hero.stats.map(s => [s.num, s.label] as [string, string]),
-      customWebsite: projects.customWebsite,
-      websiteRebuild: projects.websiteRebuild,
-      athlosDesc: projects.athlosDesc,
-      valuatumDesc: projects.valuatumDesc,
-      visitAthlos: projects.visitAthlos,
-      viewProject: projects.viewProject,
-      comingSoon: projects.comingSoon,
-      moreProjectsSoon: projects.moreProjectsSoon,
-      focusEyebrow: focus.focusEyebrow,
-      focusTitle: focus.focusTitle,
-      ctaEyebrow: cta.ctaEyebrow,
-      ctaTitle: cta.ctaTitle,
-      ctaTitleHighlight: cta.ctaTitleHighlight,
-      startProject: cta.startProject,
-    }
-    FOCUS = focus.items as typeof FOCUS
-  } else {
-    t = translations.fi.work
-    FOCUS = translations.fi.workFocus
+  const t = {
+    selectedWork: hero.selectedWork,
+    heroTitle: hero.heroTitle,
+    heroSub: hero.heroSub,
+    stats: hero.stats.map(s => [s.num, s.label] as [string, string]),
+    customWebsite: projects.customWebsite,
+    websiteRebuild: projects.websiteRebuild,
+    athlosDesc: projects.athlosDesc,
+    valuatumDesc: projects.valuatumDesc,
+    visitAthlos: projects.visitAthlos,
+    viewProject: projects.viewProject,
+    comingSoon: projects.comingSoon,
+    moreProjectsSoon: projects.moreProjectsSoon,
+    focusEyebrow: focus.focusEyebrow,
+    focusTitle: focus.focusTitle,
+    ctaEyebrow: cta.ctaEyebrow,
+    ctaTitle: cta.ctaTitle,
+    ctaTitleHighlight: cta.ctaTitleHighlight,
+    startProject: cta.startProject,
   }
+  const FOCUS = focus.items
 
   const rootRef = useRef<HTMLDivElement>(null)
 

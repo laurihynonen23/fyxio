@@ -1,0 +1,61 @@
+{
+  "key": "work",
+  "locale": "fi",
+  "route": "/work",
+  "metadata": {
+    "title": "Projektit — Fyxio",
+    "description": "Valikoituja verkkosivuprojekteja yrityksille kaikilla toimialoilla."
+  },
+  "sections": [
+    {
+      "id": "hero",
+      "type": "work-hero",
+      "visible": true,
+      "selectedWork": "Valikoitu työ",
+      "heroTitle": ["Jokaisella projektilla", "on sama", "ydintavoite."],
+      "heroSub": "Saada yritys näyttämään vahvemmalta verkossa. Terävämpi muotoilu, siistimpi rakenne, uskottavampi jo ensimmäiseltä vierailulta.",
+      "stats": [
+        { "id": "stat-1", "num": "48t", "label": "Keskim. toimitusaika" },
+        { "id": "stat-2", "num": "100%", "label": "Koodin omistajuus" },
+        { "id": "stat-3", "num": "0", "label": "Mallisivustoja" }
+      ]
+    },
+    {
+      "id": "projects",
+      "type": "work-projects",
+      "visible": true,
+      "customWebsite": "Mukautettu verkkosivusto",
+      "websiteRebuild": "Verkkosivuston uudelleenrakennus",
+      "athlosDesc": "Premium-verkkosivusto suomalaiselle edistyneelle röntgenkuvausyritykselle. Toimitettu 3 päivässä.",
+      "valuatumDesc": "Moderni uudelleenrakennus suomalaiselle talousanalyysiplatformille, joka palvelee luottoriskitutkimuksen ja osaketutkimuksen ammattilaisia.",
+      "visitAthlos": "Vieraile sivulla athlos.fi",
+      "viewProject": "Katso projekti",
+      "comingSoon": "Tulossa pian",
+      "moreProjectsSoon": "Lisää projekteja julkaistaan pian"
+    },
+    {
+      "id": "focus",
+      "type": "work-focus",
+      "visible": true,
+      "focusEyebrow": "Mihin keskityn jokaisessa projektissa",
+      "focusTitle": "Samat periaatteet, joka kerta.",
+      "items": [
+        { "id": "focus-1", "title": "Vahva visuaalinen hierarkia", "body": "Tärkein tieto saa eniten visuaalista painoa." },
+        { "id": "focus-2", "title": "Parempi ensivaikutelma", "body": "Vierailijat päättävät sekunneissa. Sivusto ansaitsee huomion nopeasti." },
+        { "id": "focus-3", "title": "Siistimpi rakenne", "body": "Navigointi ja asettelu, joka vähentää ajattelua eikä lisää sitä." },
+        { "id": "focus-4", "title": "Nopeampi toteutus", "body": "Työskenteleminen nopeasti tinkimättä laadusta tai yksityiskohdista." },
+        { "id": "focus-5", "title": "Helpompi julkaisu", "body": "Hosting, DNS ja käyttöönotto hoidettu selkeällä suunnitelmalla." },
+        { "id": "focus-6", "title": "Selkeämpi omistajuus", "body": "Domain, hosting, koodi — kaikki dokumentoitu selkeästi luovutuksessa." }
+      ]
+    },
+    {
+      "id": "cta",
+      "type": "work-cta",
+      "visible": true,
+      "ctaEyebrow": "Haluatko jotain vastaavaa?",
+      "ctaTitle": "Rakennetaan jotain",
+      "ctaTitleHighlight": "esittelemisen arvoista.",
+      "startProject": "Aloita projektisi"
+    }
+  ]
+}

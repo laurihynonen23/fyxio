@@ -1,0 +1,29 @@
+{
+  "key": "blog",
+  "locale": "fi",
+  "route": "/blog",
+  "metadata": {
+    "title": "Blogi — Fyxio",
+    "description": "Käytännön oppaita verkkosivustoista, hinnoittelusta ja moderneista verkkotyökaluista."
+  },
+  "sections": [
+    {
+      "id": "hero",
+      "type": "blog-hero",
+      "visible": true,
+      "eyebrow": "Blogi",
+      "heroTitle": ["Käytännön oppaita,", "ei täytettä."],
+      "heroSub": "Artikkeleita verkkosivustoista, hinnoittelusta ja moderneista verkkotyökaluista — kirjoitettu yrittäjille, ei kehittäjille.",
+      "comingSoon": "Tulossa pian"
+    },
+    {
+      "id": "articles",
+      "type": "blog-articles",
+      "visible": true,
+      "articles": [
+        { "id": "blog-1", "slug": "wordpress-vs-modern", "category": "Vertailu", "title": "WordPress vs modernit verkkosivustot", "desc": "Miksi yhä useammat yritykset siirtyvät pois WordPressistä — ja mihin ne siirtyvät. Suoraviivainen erittely todellisista eroista nopeudessa, kustannuksissa, omistajuudessa ja ylläpidossa.", "readTime": "6 min lukemista" },
+        { "id": "blog-2", "slug": "website-pricing-guide", "category": "Opas", "title": "Verkkosivujen hinnoitteluopas", "desc": "Mitä ammattimainen verkkosivusto todella maksaa vuonna 2026, miksi hinnat vaihtelevat niin paljon ja miten tietää, onko tarjous kohtuullinen. Kaikki mitä tarvitset tehdäksesi itsevarman päätöksen.", "readTime": "8 min lukemista" }
+      ]
+    }
+  ]
+}

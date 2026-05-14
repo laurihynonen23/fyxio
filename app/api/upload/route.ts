@@ -17,8 +17,8 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
           'application/pdf',
         ],
         maximumSizeInBytes: 50 * 1024 * 1024,
+        access: 'private',
       }),
-      onUploadCompleted: async () => {},
     })
     return NextResponse.json(jsonResponse)
   } catch (err) {

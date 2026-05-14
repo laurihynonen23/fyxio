@@ -1,0 +1,63 @@
+{
+  "key": "faq",
+  "locale": "fi",
+  "route": "/faq",
+  "metadata": {
+    "title": "UKK — Fyxio",
+    "description": "Yleisiä kysymyksiä verkkosivurakentamisesta, hinnoittelusta, prosessista ja omistajuudesta — rehellisiä vastauksia."
+  },
+  "sections": [
+    {
+      "id": "hero",
+      "type": "faq-hero",
+      "visible": true,
+      "eyebrow": "UKK",
+      "heroTitle": ["Yleisiä kysymyksiä,", "rehellisiä vastauksia."],
+      "heroSub": "Jos sinulla on kysymys, jota ei ole täällä, lähetä se osoitteeseen lauri.hynonen@gmail.com ja vastaan suoraan.",
+      "stillHaveQuestion": "Onko sinulla vielä kysymys?",
+      "sendDirectly": "Lähetä suoraan"
+    },
+    {
+      "id": "items",
+      "type": "faq-items",
+      "visible": true,
+      "groups": [
+        {
+          "id": "group-pricing",
+          "group": "Hinnoittelu & laajuus",
+          "items": [
+            { "id": "q-1", "q": "Työskenteletkö kiinteillä hinnoilla vai tuntihinnalla?", "a": "Kaikki projektit hinnoitellaan etukäteen sovitulla kiinteällä maksulla. Tiedät tarkalleen, mitä maksat, ennen kuin mitään työtä aloitetaan. Tuntihinnat (alkaen 80 €/h) koskevat vain sisältöpäivityksiä tai alkuperäisen laajuuden ulkopuolista työtä." },
+            { "id": "q-2", "q": "Mitä \"alkaen\" tarkoittaa hinnoittelussasi?", "a": "Lähtöhinta heijastaa kyseisen tason minimilaajuutta — Starter alkaen 699 €, Business alkaen 1 290 €, Premium alkaen 2 490 €. Useimmat projektit laskeutuvat lähelle lähtöhintaa. Jos projektisi on suurempi — enemmän sivuja, enemmän monimutkaisuutta, migraatiotyötä — lopullinen hinta heijastaa sitä. Saat tarkan luvun ennen kuin mitään aloitetaan." },
+            { "id": "q-3", "q": "Voinko maksaa erissä?", "a": "Kyllä. Aloittamiseen vaaditaan käsiraha — tyypillisesti 50 % ennakkoon — ja loppuosa erääntyy projektin valmistuessa ennen luovutusta." }
+          ]
+        },
+        {
+          "id": "group-process",
+          "group": "Prosessi & aikataulu",
+          "items": [
+            { "id": "q-4", "q": "Kuinka kauan tyypillinen projekti kestää?", "a": "Useimmat projektit valmistuvat muutamassa päivässä tai viikossa. Oikean sivuston ensimmäinen luonnos rakennetaan yleensä 1–2 päivässä materiaalien saapumisen jälkeen. Yhden palautekierroksen jälkeen hionnat tehdään ja sivusto julkaistaan. Suuremmat tai monimutkaisemmat projektit kestävät pidempään, mutta prosessi on oletuksena aina nopea." },
+            { "id": "q-5", "q": "Mitä tarvitset minulta aloittamiseen?", "a": "Tekstit, kuvat, videot, logo-tiedostot ja referenssit tai suunnan sivustolle. Mitä selkeämmät materiaalisi ovat, sitä nopeammin kaikki liikkuu. Jos jokin puuttuu, kerron täsmälleen mitä tarvitaan ennen rakentamisen aloittamista." },
+            { "id": "q-6", "q": "Kuinka monta revisiodirektiivikierrosta on mukana?", "a": "Starter-paketti sisältää yhden revisiodirektiivikierroksen. Business ja Premium sisältävät kaksi. Mukana olevan ylittävästä lisärevisiotyöstä laskutetaan tuntihinnalla. Määriteltyjen revisiodirektiivikierrosten tavoitteena on pitää palaute fokusoituna ja tuottavana." }
+          ]
+        },
+        {
+          "id": "group-technical",
+          "group": "Tekninen",
+          "items": [
+            { "id": "q-7", "q": "Rakennatteko WordPressillä?", "a": "Ei. Sivustot rakennetaan räätälöidysti moderneilla frameworkeilla — ei WordPressiä, ei sivunrakentajia, ei malleja. Jos olet tällä hetkellä WordPressillä ja haluat siirtyä pois siitä, se on yksi erityisesti tarjotuista palveluista." },
+            { "id": "q-8", "q": "Kuka hoitaa hostingin?", "a": "On kolme vaihtoehtoa. Hallittu hosting (alkaen 49 €/kk) tarkoittaa, että kaikki hoidetaan puolestasi. Asiakkaan omistukseen asennus (99 € kertaluonteinen) tarkoittaa sinun tilejäsi, sinun hostingisi — asennan kaiken ja luovutan sen siististi. Tai voit ottaa koodin suoraan ilmaiseksi ja antaa oman teknisen tiimisi hoitaa sen. Kaikki vaihtoehdot on selkeästi dokumentoitu." },
+            { "id": "q-9", "q": "Pystynkö muokkaamaan sivustoa itse?", "a": "Kyllä. Sisältöeditori on mukana jokaisessa paketissa — voit päivittää tekstejä ja kuvia ilman koodausta. Saatavilla on myös valinnainen AI-avusteinen editoripäivitys 19,99 €/kk, joka lisää AI-tehoisteisia tekstiparannuksia, sävysäätöjä ja SEO-ehdotuksia suoraan editoriin." }
+          ]
+        },
+        {
+          "id": "group-ownership",
+          "group": "Omistajuus & luovutus",
+          "items": [
+            { "id": "q-10", "q": "Kuka omistaa koodin projektin jälkeen?", "a": "Sinä. Täysi koodin omistajuus siirretään luovutuksessa. Ei lisensointimaksuja, ei jatkuvia maksuja sivuston pitämiseksi toiminnassa eikä minkäänlaista lukittumista." },
+            { "id": "q-11", "q": "Entä jos haluan vaihtaa toimistoa tai kehittäjiä myöhemmin?", "a": "Voit. Koodi on sinun, se on siistiä ja dokumentoitu. Mikä tahansa osaava kehittäjä voi ottaa sen ja jatkaa työskentelyä sen parissa. Se on tarkoituksellista." }
+          ]
+        }
+      ]
+    }
+  ]
+}

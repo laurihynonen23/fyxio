@@ -1,6 +1,6 @@
 import { z } from 'zod'
 
-export const localeSchema = z.enum(['en'])
+export const localeSchema = z.enum(['en', 'fi'])
 export type Locale = z.infer<typeof localeSchema>
 
 export const pageKeySchema = z.enum([
@@ -524,6 +524,7 @@ export const fyxioContentBundleSchema = z.object({
   site: siteSettingsSchema,
   locales: z.object({
     en: pageCollectionSchema,
+    fi: pageCollectionSchema,
   }),
 })
 export type FyxioContentBundle = z.infer<typeof fyxioContentBundleSchema>

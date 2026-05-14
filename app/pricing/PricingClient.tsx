@@ -6,7 +6,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useLanguage } from '@/lib/LanguageContext'
-import { translations } from '@/lib/translations'
 import type { PageContent, PageSection } from '@/content/schema'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -27,77 +26,64 @@ function findSection<T extends PageSection['type']>(sections: PageSection[], typ
   return sections.find(s => s.type === type) as Extract<PageSection, { type: T }> | undefined
 }
 
-export default function PricingClient({ enContent }: { enContent: PageContent }) {
+export default function PricingClient({ enContent, fiContent }: { enContent: PageContent; fiContent: PageContent }) {
   const { lang } = useLanguage()
+  const content = lang === 'fi' ? fiContent : enContent
 
-  let t: typeof translations['en']['pricing']
-  let PACKAGES: typeof translations['en']['pricingPackages']
-  let LAUNCH_OPTIONS: typeof translations['en']['pricingLaunchOptions']
-  let ONGOING: typeof translations['en']['pricingOngoing']
-  let PRICE_FACTORS: typeof translations['en']['pricingFactors']
+  const hero = findSection(content.sections, 'pricing-hero')!
+  const pkgs = findSection(content.sections, 'pricing-packages')!
+  const launch = findSection(content.sections, 'pricing-launch')!
+  const ongoing = findSection(content.sections, 'pricing-ongoing')!
+  const factors = findSection(content.sections, 'pricing-factors')!
+  const cta = findSection(content.sections, 'pricing-cta')!
 
-  if (lang === 'en') {
-    const hero = findSection(enContent.sections, 'pricing-hero')!
-    const pkgs = findSection(enContent.sections, 'pricing-packages')!
-    const launch = findSection(enContent.sections, 'pricing-launch')!
-    const ongoing = findSection(enContent.sections, 'pricing-ongoing')!
-    const factors = findSection(enContent.sections, 'pricing-factors')!
-    const cta = findSection(enContent.sections, 'pricing-cta')!
-
-    t = {
-      eyebrow: hero.eyebrow,
-      heroTitle: hero.heroTitle,
-      heroSubNote: hero.heroSubNote,
-      packagesEyebrow: pkgs.packagesEyebrow,
-      packagesTitle: pkgs.packagesTitle,
-      packagesNote: pkgs.packagesNote,
-      startWith: pkgs.startWith,
-      bestFor: pkgs.bestFor,
-      mostPopular: pkgs.mostPopular,
-      launchEyebrow: launch.launchEyebrow,
-      launchTitle: launch.launchTitle,
-      launchBody: launch.launchBody,
-      domainNote: launch.domainNote,
-      domainNoteSub: launch.domainNoteSub,
-      ongoingEyebrow: ongoing.ongoingEyebrow,
-      ongoingTitle: ongoing.ongoingTitle,
-      hourlyLabel: ongoing.hourlyLabel,
-      hourlyDesc: ongoing.hourlyDesc,
-      hourlyPrice: ongoing.hourlyPrice,
-      aiSessionNew: ongoing.aiSessionNew,
-      aiSessionAvailable: ongoing.aiSessionAvailable,
-      aiSessionTitle: ongoing.aiSessionTitle,
-      aiSessionTitleHighlight: ongoing.aiSessionTitleHighlight,
-      aiSessionBody: ongoing.aiSessionBody,
-      aiSessionOneTime: ongoing.aiSessionOneTime,
-      aiSessionPrice: ongoing.aiSessionPrice,
-      aiSessionNote: ongoing.aiSessionNote,
-      aiSessionBook: ongoing.aiSessionBook,
-      aiSessionRemote: ongoing.aiSessionRemote,
-      aiSessionFeatures: ongoing.aiSessionFeatures,
-      aiSessionPrereqLabel: ongoing.aiSessionPrereqLabel,
-      aiSessionPrereqs: ongoing.aiSessionPrereqs,
-      scopeEyebrow: factors.scopeEyebrow,
-      scopeTitle: factors.scopeTitle,
-      scopeNotSureLabel: factors.scopeNotSureLabel,
-      scopeNotSureTitle: factors.scopeNotSureTitle,
-      scopeNotSureBody: factors.scopeNotSureBody,
-      scopeAskRec: factors.scopeAskRec,
-      ctaEyebrow: cta.ctaEyebrow,
-      ctaTitle: cta.ctaTitle,
-      getInTouch: cta.getInTouch,
-    }
-    PACKAGES = pkgs.packages as typeof PACKAGES
-    LAUNCH_OPTIONS = launch.options as typeof LAUNCH_OPTIONS
-    ONGOING = ongoing.ongoing as typeof ONGOING
-    PRICE_FACTORS = factors.factors
-  } else {
-    t = translations.fi.pricing
-    PACKAGES = translations.fi.pricingPackages
-    LAUNCH_OPTIONS = translations.fi.pricingLaunchOptions
-    ONGOING = translations.fi.pricingOngoing
-    PRICE_FACTORS = translations.fi.pricingFactors
+  const t = {
+    eyebrow: hero.eyebrow,
+    heroTitle: hero.heroTitle,
+    heroSubNote: hero.heroSubNote,
+    packagesEyebrow: pkgs.packagesEyebrow,
+    packagesTitle: pkgs.packagesTitle,
+    packagesNote: pkgs.packagesNote,
+    startWith: pkgs.startWith,
+    bestFor: pkgs.bestFor,
+    mostPopular: pkgs.mostPopular,
+    launchEyebrow: launch.launchEyebrow,
+    launchTitle: launch.launchTitle,
+    launchBody: launch.launchBody,
+    domainNote: launch.domainNote,
+    domainNoteSub: launch.domainNoteSub,
+    ongoingEyebrow: ongoing.ongoingEyebrow,
+    ongoingTitle: ongoing.ongoingTitle,
+    hourlyLabel: ongoing.hourlyLabel,
+    hourlyDesc: ongoing.hourlyDesc,
+    hourlyPrice: ongoing.hourlyPrice,
+    aiSessionNew: ongoing.aiSessionNew,
+    aiSessionAvailable: ongoing.aiSessionAvailable,
+    aiSessionTitle: ongoing.aiSessionTitle,
+    aiSessionTitleHighlight: ongoing.aiSessionTitleHighlight,
+    aiSessionBody: ongoing.aiSessionBody,
+    aiSessionOneTime: ongoing.aiSessionOneTime,
+    aiSessionPrice: ongoing.aiSessionPrice,
+    aiSessionNote: ongoing.aiSessionNote,
+    aiSessionBook: ongoing.aiSessionBook,
+    aiSessionRemote: ongoing.aiSessionRemote,
+    aiSessionFeatures: ongoing.aiSessionFeatures,
+    aiSessionPrereqLabel: ongoing.aiSessionPrereqLabel,
+    aiSessionPrereqs: ongoing.aiSessionPrereqs,
+    scopeEyebrow: factors.scopeEyebrow,
+    scopeTitle: factors.scopeTitle,
+    scopeNotSureLabel: factors.scopeNotSureLabel,
+    scopeNotSureTitle: factors.scopeNotSureTitle,
+    scopeNotSureBody: factors.scopeNotSureBody,
+    scopeAskRec: factors.scopeAskRec,
+    ctaEyebrow: cta.ctaEyebrow,
+    ctaTitle: cta.ctaTitle,
+    getInTouch: cta.getInTouch,
   }
+  const PACKAGES = pkgs.packages
+  const LAUNCH_OPTIONS = launch.options
+  const ONGOING = ongoing.ongoing
+  const PRICE_FACTORS = factors.factors
 
   const rootRef = useRef<HTMLDivElement>(null)
 

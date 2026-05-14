@@ -1,0 +1,51 @@
+{
+  "key": "contact",
+  "locale": "fi",
+  "route": "/contact",
+  "metadata": {
+    "title": "Yhteystiedot — Fyxio",
+    "description": "Esitä lyhyt kysymys tai lähetä materiaalisi — tulen takaisin aloitussivudemolla."
+  },
+  "sections": [
+    {
+      "id": "hero",
+      "type": "contact-hero",
+      "visible": true,
+      "eyebrow": "Puhutaan",
+      "heroTitle": ["Puhutaan", "verkkosivustostasi."],
+      "heroSubtitle": "Esitä lyhyt kysymys tai lähetä materiaalisi — tulen takaisin aloitussivudemolla.",
+      "twoWaysTitle": "Kaksi tapaa\naloittaa",
+      "optionALabel": "Vaihtoehto A",
+      "optionATitle": "Kysy projektistasi",
+      "optionADesc": "Kerro mitä tarvitset ja vastaan siihen, mikä on järkevää.",
+      "optionBLabel": "Vaihtoehto B",
+      "optionBTitle": "Pyydä aloitussivudemoa",
+      "optionBDesc": "Lähetä logosi, kuvat, videot ja vanhan sivuston linkki — tulen takaisin demolla.",
+      "replyTime": "Vastaus 1–2 työpäivän sisällä",
+      "demoRequestTitle": "Demopyyntö?",
+      "demoRequestBody": "Lataa yrityksen kuvat, videot ja logo. Lisää nykyisen verkkosivustosi linkki. Käyn läpi ja tulen takaisin aloitussivudemolla — ei sitoumusta.",
+      "tabQuestion": "Esitä kysymys",
+      "tabDemo": "Pyydä demoa",
+      "labelName": "Nimi",
+      "labelCompany": "Yritys",
+      "labelEmail": "Sähköposti",
+      "labelSite": "Nykyinen verkkosivusto",
+      "labelFiles": "Yrityksen kuvat & videot",
+      "optional": "(valinnainen)",
+      "optionalMaxFile": "(valinnainen, maks. 50 Mt kukin)",
+      "dropFiles": "Vedä tiedostoja tähän tai napsauta selataksesi",
+      "dropFilesHint": "Kuvat, videot, logot — kaikki mitä haluat uudelle sivustolle",
+      "labelMessageDemo": "Lisättävää?",
+      "labelMessageQuestion": "Mitä tarvitset?",
+      "placeholderDemo": "Toimiala, sävy, erityisvaatimukset...",
+      "placeholderQuestion": "Uusi verkkosivusto, uudistus, kysymys hinnoittelusta...",
+      "requiredFields": "* Pakolliset kentät",
+      "sending": "Lähetetään...",
+      "sendDemo": "Lähetä demoa varten →",
+      "sendInquiry": "Lähetä tiedustelu →",
+      "successTitle": "Kiitos — viesti vastaanotettu.",
+      "successBody": "Otan yhteyttä 1–2 työpäivän sisällä. Jos kiireellistä:",
+      "errorMsg": "Jokin meni pieleen. Yritä uudelleen tai lähetä sähköpostia suoraan osoitteeseen lauri.hynonen@gmail.com."
+    }
+  ]
+}

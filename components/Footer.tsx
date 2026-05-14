@@ -32,7 +32,7 @@ export default function Footer() {
               <Link href="/process" className="footer-link">{t.process}</Link>
               <Link href="/work" className="footer-link">{t.work}</Link>
               <Link href="/pricing" className="footer-link">{t.pricing}</Link>
-              <Link href="/about" className="footer-link">{t.about}</Link>
+              {lang !== 'fi' && <Link href="/about" className="footer-link">{t.about}</Link>}
             </div>
             <div className="footer-col">
               <span className="footer-col-label">{t.insights}</span>

@@ -1,0 +1,230 @@
+{
+  "key": "pricing",
+  "locale": "fi",
+  "route": "/pricing",
+  "metadata": {
+    "title": "Hinnoittelu — Fyxio",
+    "description": "Täysin räätälöity verkkosivustorakennus alkaen 699 €. Läpinäkyvä hinnoittelu, kiinteät maksut ja joustavat julkaisuvaihtoehdot."
+  },
+  "sections": [
+    {
+      "id": "hero",
+      "type": "pricing-hero",
+      "visible": true,
+      "eyebrow": "Hinnoittelu",
+      "heroTitle": ["Täysin räätälöity", "verkkosivustorakennus", "alkaen 699 €."],
+      "heroSubNote": "Lähtöhinnat. Lopullinen laajuus riippuu tarpeistasi — sovitaan ennen työn aloittamista."
+    },
+    {
+      "id": "packages",
+      "type": "pricing-packages",
+      "visible": true,
+      "packagesEyebrow": "Verkkosivupaketit",
+      "packagesTitle": "Kertamaksu.\nOmistat tuloksen.",
+      "packagesNote": "Hinnat ovat lähtökohtia. Lopullinen laajuus riippuu sivumäärästä, sisällöstä, julkaisujärjestelystä, muokkaustarpeet ja erikoisominaisuudet. Jos sisältö on jo valmiina, projektit voivat edetä erittäin nopeasti.",
+      "startWith": "Aloita",
+      "bestFor": "Sopii parhaiten",
+      "mostPopular": "Suosituin",
+      "packages": [
+        {
+          "id": "pkg-starter",
+          "tier": "Starter",
+          "price": "Alkaen 699 €",
+          "subtitle": "Yksinkertainen sivusto, nopea julkaisu",
+          "note": "Kertaluonteinen projektimaksu",
+          "featured": false,
+          "desc": "Pienille yrityksille, jotka tarvitsevat puhtaan, modernin sivuston nopeasti.",
+          "features": [
+            "Enintään 5 sivua",
+            "Mukautettu muotoilu",
+            "Mobiilivastaava",
+            "Yhteydenottolomake",
+            "Perus-SEO-rakenne",
+            "Nopea julkaisuvalmistelu",
+            "Sisältöeditori mukana",
+            "1 revisiodirektiivi"
+          ]
+        },
+        {
+          "id": "pkg-business",
+          "tier": "Business",
+          "price": "Alkaen 1 290 €",
+          "subtitle": "Kattavampi, viimeistellympi",
+          "note": "Kertaluonteinen projektimaksu",
+          "featured": true,
+          "badge": "Suosituin",
+          "desc": "Yrityksille, jotka haluavat vahvemman, kattavamman verkkosivuston paremmalla rakenteella ja viimeistellymmällä ensivaikutelmalla.",
+          "features": [
+            "Enintään 10 sivua",
+            "Mukautettu muotoilu",
+            "Mobiilivastaava",
+            "Yhteydenottolomake",
+            "Parempi sisältörakenne",
+            "Perus-SEO-rakenne",
+            "Nopea julkaisuvalmistelu",
+            "Editorivalmis sisältörakenne",
+            "Sisältöeditori mukana",
+            "2 revisiodirektiivikierrosta"
+          ]
+        },
+        {
+          "id": "pkg-premium",
+          "tier": "Premium",
+          "price": "Alkaen 2 490 €",
+          "subtitle": "Mukautettu laajuus",
+          "note": "Kertaluonteinen projektimaksu",
+          "featured": false,
+          "desc": "Yrityksille, jotka haluavat hiotumman, vaikuttavamman ja räätälöidymmän verkkosivustokokemuksen.",
+          "features": [
+            "Suurempi räätälöity sivusto",
+            "Hiotumpi visuaalinen suunta",
+            "Edistyneet osiot ja interaktiot",
+            "Mukautetut sivuasettelut",
+            "Editorivalmis sisältörakenne",
+            "Sisältöeditori mukana",
+            "Prioriteettitoimitusaika",
+            "2 revisiodirektiivikierrosta",
+            "Julkaisutuki"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "type": "pricing-launch",
+      "visible": true,
+      "launchEyebrow": "Julkaisuvalmistelu",
+      "launchTitle": "Valitse, miten haluat sivuston\nhoidettavan rakennuksen jälkeen.",
+      "launchBody": "Jotkut asiakkaat haluavat kaiken hoidettuna. Toiset haluavat omistaa tilit puhtaalla luovutuksella. Tekniset tiimit voivat ottaa koodin ja hoitaa loput itse.",
+      "domainNote": "Domainisi on aina sinun.",
+      "domainNoteSub": "Autamme vain yhdistämään sen uuteen sivustoon.",
+      "options": [
+        {
+          "id": "launch-managed",
+          "title": "Hoidetaan puolestasi",
+          "bestFor": "Ei-tekniset asiakkaat",
+          "desc": "Hoidamme hostingin, julkaisun ja ylläpidon. Muokkaat sisältöäsi koska tahansa mukana tulevan editorin kautta — ei koodia, ei kehittäjää.",
+          "price": "Alkaen 49 €/kk",
+          "features": [
+            "Hallittu hosting-asennus",
+            "Domainliitäntätuki",
+            "SSL-asennus",
+            "Peruspalvelunvalvonta",
+            "Muokkaa sisältöä editorin kautta",
+            "Tekninen ylläpito"
+          ],
+          "note": "Paras jos et halua käsitellä GitHubia, Verceliä, DNS:ää tai teknistä asennusta."
+        },
+        {
+          "id": "launch-owned",
+          "title": "Asiakkaan omistukseen",
+          "bestFor": "Asiakkaat, jotka haluavat täyden omistajuuden",
+          "desc": "Omistat hosting- ja kooditilit. Asetamme kaiken asetukset ja yhdistämme sivuston oikein.",
+          "price": "99 €",
+          "features": [
+            "Asennus omalle GitHub- tai hosting-tilille",
+            "Käyttöönotto-asennus",
+            "Domain- ja DNS-ohjaus",
+            "Editori- tai sisältöasennus",
+            "Luovutuspuhelu"
+          ],
+          "note": "Kertaluonteinen maksu. Paras jos haluat pitkäaikaisen omistajuuden mutta haluat silti meidän hoitavan teknisen julkaisun."
+        },
+        {
+          "id": "launch-code",
+          "title": "Koodin luovutus",
+          "bestFor": "Tekniset tiimit",
+          "desc": "Toimitamme verkkosivuston koodin ja dokumentaation. Tiimisi hoitaa hostingin, käyttöönoton ja ylläpidon.",
+          "price": "Ilmainen",
+          "oldPrice": "49 €",
+          "features": [
+            "Täysi koodin luovutus",
+            "Rakennusohjeet",
+            "Perusdokumentaatio",
+            "Valinnainen luovutuspuhelu"
+          ],
+          "note": "Paras jos sinulla on jo kehittäjä tai tekninen tiimi."
+        }
+      ]
+    },
+    {
+      "id": "ongoing",
+      "type": "pricing-ongoing",
+      "visible": true,
+      "ongoingEyebrow": "Jatkuva työ",
+      "ongoingTitle": "Muokkaus, hosting ja päivitykset\novat joustavia.",
+      "hourlyLabel": "Sisältöpäivitykset minulta",
+      "hourlyDesc": "Tekstimuokkaukset, kuvien vaihdot, uudet osiot, uudet sivut ja muu sisältötyö voidaan myös hoitaa puolestasi tuntihinnalla.",
+      "hourlyPrice": "Alkaen 80 €/h",
+      "aiSessionNew": "Uusi",
+      "aiSessionAvailable": "Saatavilla erillisenä sessiona",
+      "aiSessionTitle": "AI-rakennussessio.",
+      "aiSessionTitleHighlight": "Ota täysi hallinta.",
+      "aiSessionBody": "Tehokas käytännön sessio, jossa rakennan Claude Code tai Codex -ympäristön projektiisi ja opetan sinulle, kuinka tehdä merkittäviä muutoksia itse — sivustoosi tai mihin tahansa muuhun.",
+      "aiSessionOneTime": "Kertaluonteinen sessio",
+      "aiSessionPrice": "199 €",
+      "aiSessionNote": "Yksi sessio.\nEi tilausta.",
+      "aiSessionBook": "Varaa sessio",
+      "aiSessionRemote": "Etäyhteys videopuhelun kautta",
+      "aiSessionFeatures": [
+        "Claude Code tai Codex asennettu projektiisi",
+        "Live-läpikäynti — seuraat mukana ja rakennat",
+        "Opi tekemään isoja muutoksia ilman kehittäjää",
+        "Toimii vaikka et olisi koskaan kirjoittanut koodia",
+        "Kattaa sivujen, osioiden ja ominaisuuksien lisäämisen",
+        "Pohja omien sivustojen rakentamiselle myöhemmin"
+      ],
+      "aiSessionPrereqLabel": "Ennen sessiota",
+      "aiSessionPrereqs": [
+        "Aktiivinen Claude- tai ChatGPT-tilaus — käytät työkaluja suoraan",
+        "AI-työkalu asennettuna kannettavallesi ennen aloittamista",
+        "GitHub-tili suositeltava"
+      ],
+      "ongoing": [
+        {
+          "id": "ongoing-ai",
+          "label": "AI-AVUSTEINEN MUOKKAUS",
+          "title": "Editori + AI",
+          "price": "19,99 €/kk",
+          "body": "Päivitä mukana tuleva editorisi AI-tuella tekstien uudelleenkirjoittamiseen, parantamiseen ja säätämiseen milloin tahansa.",
+          "features": [
+            "AI-avusteiset tekstiparannukset",
+            "Sävy- ja selkeyden säädöt",
+            "SEO-otsikko- ja metaehdotukset",
+            "Nopeammat sisältöiteraatiot",
+            "Paras asiakkaille, jotka parantavat sisältöä ajan mittaan"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "factors",
+      "type": "pricing-factors",
+      "visible": true,
+      "scopeEyebrow": "Laajuus",
+      "scopeTitle": "Mikä vaikuttaa\nloppuhintaan?",
+      "scopeNotSureLabel": "Epävarma, mikä sopii?",
+      "scopeNotSureTitle": "Kerro mitä tarvitset.\nPidän sen yksinkertaisena.",
+      "scopeNotSureBody": "Lähetä lyhyt brief ja suosittelen yksinkertaisinta ratkaisua tilanteeseesi — ilman tarpeettomien työkalujen tai monimutkaisuuden tuputtamista.",
+      "scopeAskRec": "Pyydä suositusta",
+      "factors": [
+        "Sivujen määrä",
+        "Onko sisältö valmiina vai tarvitseeko muokkausta",
+        "Mukautetun muotoilun ja animaation määrä",
+        "Hosting- ja omistajuusjärjestelyt",
+        "Editori- tai AI-editorvaatimukset",
+        "Lomakkeet, integraatiot tai erikoisominaisuudet",
+        "Migraatio vanhalta sivustolta",
+        "Toimituksen nopeus"
+      ]
+    },
+    {
+      "id": "cta",
+      "type": "pricing-cta",
+      "visible": true,
+      "ctaEyebrow": "Puhutaan",
+      "ctaTitle": "Valmis kun sinä olet.",
+      "getInTouch": "Ota yhteyttä"
+    }
+  ]
+}

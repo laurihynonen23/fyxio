@@ -8,6 +8,7 @@ import Image from 'next/image'
 import { useLanguage } from '@/lib/LanguageContext'
 import { translations } from '@/lib/translations'
 import type { PageContent, PageSection } from '@/content/schema'
+// translations still used for serviceDataList (not CMS-managed)
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -28,33 +29,29 @@ function findSection<T extends PageSection['type']>(sections: PageSection[], typ
   return sections.find(s => s.type === type) as Extract<PageSection, { type: T }> | undefined
 }
 
-export default function ServicesClient({ enContent }: { enContent: PageContent }) {
+export default function ServicesClient({ enContent, fiContent }: { enContent: PageContent; fiContent: PageContent }) {
   const { lang } = useLanguage()
+  const content = lang === 'fi' ? fiContent : enContent
 
-  let t: typeof translations['en']['services']
+  const hero = findSection(content.sections, 'services-hero')!
+  const website = findSection(content.sections, 'services-website')!
+  const ai = findSection(content.sections, 'services-ai')!
+  const cta = findSection(content.sections, 'services-cta')!
 
-  if (lang === 'en') {
-    const hero = findSection(enContent.sections, 'services-hero')!
-    const website = findSection(enContent.sections, 'services-website')!
-    const ai = findSection(enContent.sections, 'services-ai')!
-    const cta = findSection(enContent.sections, 'services-cta')!
-    t = {
-      eyebrow: hero.eyebrow,
-      heroTitle: hero.heroTitle,
-      heroSub: hero.heroSub,
-      websiteEyebrow: website.websiteEyebrow,
-      websiteTitle: website.websiteTitle,
-      websiteSub: website.websiteSub,
-      learnMore: website.learnMore,
-      aiEyebrow: ai.aiEyebrow,
-      aiTitle: ai.aiTitle,
-      aiSub: ai.aiSub,
-      ctaEyebrow: cta.ctaEyebrow,
-      ctaTitle: cta.ctaTitle,
-      ctaBtn: cta.ctaBtn,
-    }
-  } else {
-    t = translations.fi.services
+  const t = {
+    eyebrow: hero.eyebrow,
+    heroTitle: hero.heroTitle,
+    heroSub: hero.heroSub,
+    websiteEyebrow: website.websiteEyebrow,
+    websiteTitle: website.websiteTitle,
+    websiteSub: website.websiteSub,
+    learnMore: website.learnMore,
+    aiEyebrow: ai.aiEyebrow,
+    aiTitle: ai.aiTitle,
+    aiSub: ai.aiSub,
+    ctaEyebrow: cta.ctaEyebrow,
+    ctaTitle: cta.ctaTitle,
+    ctaBtn: cta.ctaBtn,
   }
 
   // serviceDataList is always from translations (not CMS-managed — has detailed service data)

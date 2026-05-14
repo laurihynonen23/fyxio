@@ -1,0 +1,32 @@
+{
+  "key": "insights",
+  "locale": "fi",
+  "route": "/insights",
+  "metadata": {
+    "title": "Artikkelit — Fyxio",
+    "description": "Näkemyksiä paremmista verkkosivuprojekteista."
+  },
+  "sections": [
+    {
+      "id": "hero",
+      "type": "insights-hero",
+      "visible": true,
+      "eyebrow": "Artikkelit",
+      "heroTitle": ["Näkemyksiä paremmista", "verkkosivuprojekteista."],
+      "heroSub": "Useimmat verkkosivuongelmat alkavat ennen muotoilua. Ne alkavat epäselvästä omistajuudesta, heikoista materiaaleista, turvonneista asetuksista ja sekavista julkaisuprosesseista.",
+      "readArticle": "Lue artikkeli"
+    },
+    {
+      "id": "articles",
+      "type": "insights-articles",
+      "visible": true,
+      "articles": [
+        { "id": "art-1", "tag": "Vertailu", "title": "WordPress vs moderni verkkosivustoratkaisu: kumpi on järkevämpi?", "excerpt": "WordPress ei ole automaattisesti oikea vastaus jokaiselle yritysverkkosivustolle. Joissakin tapauksissa se on hyödyllinen. Toisissa se lisää enemmän ylläpitoa kuin liiketoiminta todella tarvitsee.", "slug": "wordpress-vs-modern-website" },
+        { "id": "art-2", "tag": "Hinnoittelu", "title": "Paljonko yritysverkkosivusto maksaa?", "excerpt": "Verkkosivuhinnoittelu vaihtelee, koska kaikki projektit eivät ratkaise samaa ongelmaa. Yksinkertainen esitesivusto on hyvin erilainen kuin räätälöity uudistus migraatiotyöllä.", "slug": "how-much-does-a-business-website-cost" },
+        { "id": "art-3", "tag": "Julkaisu", "title": "Kuinka julkaista verkkosivusto oikein.", "excerpt": "Monille yrityksille verkkosivusto itsessään ei ole vaikea osa — julkaisu on. Hosting, domain-asetukset, DNS-muutokset, uudelleenohjaukset ja lopulliset tarkistukset ovat sieltä, missä sekaannus yleensä alkaa.", "slug": "how-to-launch-a-website-properly" },
+        { "id": "art-4", "tag": "Omistajuus", "title": "Kenen pitäisi omistaa domainisi, hostingisi ja verkkosivustokoodisi?", "excerpt": "Monet verkkosivuongelmat eivät ole muotoiluongelmia — ne ovat omistajuusongelmia. Yritykset eivät usein tiedä kuka hallitsee domainia, missä sivustoa hostataan tai miten se voitaisiin siirtää.", "slug": "who-should-own-domain-hosting-and-code" },
+        { "id": "art-5", "tag": "Valmistautuminen", "title": "Kuinka valmistaa materiaalit verkkosivuprojektia varten.", "excerpt": "Monet verkkosivuprojektit hidastuvat, koska materiaalit ovat hajallaan, puutteellisia tai jatkuvasti muuttuvia. Hyvin valmisteltu sisältökansio voi säästää päiviä tarpeettomasta edestakaisesta kommunikoinnista.", "slug": "how-to-prepare-materials-for-a-website-project" }
+      ]
+    }
+  ]
+}

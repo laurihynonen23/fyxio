@@ -19,7 +19,11 @@ export async function POST(req: NextRequest) {
     const currentSite = (body.current_site as string) || ''
     const inquiryType = (body.inquiry_type as string) || 'question'
     const message = (body.message as string) || ''
-    const uploadedUrls: { name: string; url: string }[] = body.uploaded_urls || []
+    const rawUrls: { name: string; url: string }[] = body.uploaded_urls || []
+    const uploadedUrls = rawUrls.map(f => ({
+      name: f.name,
+      url: `https://www.fyxio.fi/api/files?url=${encodeURIComponent(f.url)}`,
+    }))
 
     const isDemo = inquiryType === 'demo'
     const subject = isDemo
@@ -51,7 +55,7 @@ export async function POST(req: NextRequest) {
     `
 
     await resend.emails.send({
-      from: 'Fyxio Contact <onboarding@resend.dev>',
+      from: 'Fyxio Contact <contact@fyxio.fi>',
       to: TO_EMAIL,
       replyTo: email,
       subject,

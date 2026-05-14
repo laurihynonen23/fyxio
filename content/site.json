@@ -3,7 +3,7 @@
   "name": "Fyxio",
   "defaultLocale": "en",
   "editor": {
-    "supportedLocales": ["en"],
+    "supportedLocales": ["en", "fi"],
     "supportedPageKeys": ["home","about","contact","faq","insights","blog","pricing","process","services","work"],
     "supportedSectionTypes": [
       "home-hero","home-why","home-value","home-services","home-process","home-work","home-cta",

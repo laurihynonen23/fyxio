@@ -5,7 +5,6 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Link from 'next/link'
 import { useLanguage } from '@/lib/LanguageContext'
-import { translations } from '@/lib/translations'
 import type { PageContent, PageSection } from '@/content/schema'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -20,34 +19,28 @@ function findSection<T extends PageSection['type']>(sections: PageSection[], typ
   return sections.find(s => s.type === type) as Extract<PageSection, { type: T }> | undefined
 }
 
-export default function ProcessClient({ enContent }: { enContent: PageContent }) {
+export default function ProcessClient({ enContent, fiContent }: { enContent: PageContent; fiContent: PageContent }) {
   const { lang } = useLanguage()
+  const content = lang === 'fi' ? fiContent : enContent
 
-  let t: typeof translations['en']['process']
-  let STEPS: typeof translations['en']['processSteps']
+  const hero = findSection(content.sections, 'process-hero')!
+  const stepsSection = findSection(content.sections, 'process-steps')!
+  const total = findSection(content.sections, 'process-total')!
 
-  if (lang === 'en') {
-    const hero = findSection(enContent.sections, 'process-hero')!
-    const stepsSection = findSection(enContent.sections, 'process-steps')!
-    const total = findSection(enContent.sections, 'process-total')!
-    t = {
-      eyebrow: hero.eyebrow,
-      heroTitle: hero.heroTitle,
-      heroSub: hero.heroSub,
-      step: stepsSection.step,
-      totalEyebrow: total.totalEyebrow,
-      totalTitle: total.totalTitle,
-      totalTitleHighlight: total.totalTitleHighlight,
-      totalBody: total.totalBody,
-      ctaEyebrow: total.ctaEyebrow,
-      ctaTitle: total.ctaTitle,
-      ctaBtn: total.ctaBtn,
-    }
-    STEPS = stepsSection.steps as typeof STEPS
-  } else {
-    t = translations.fi.process
-    STEPS = translations.fi.processSteps
+  const t = {
+    eyebrow: hero.eyebrow,
+    heroTitle: hero.heroTitle,
+    heroSub: hero.heroSub,
+    step: stepsSection.step,
+    totalEyebrow: total.totalEyebrow,
+    totalTitle: total.totalTitle,
+    totalTitleHighlight: total.totalTitleHighlight,
+    totalBody: total.totalBody,
+    ctaEyebrow: total.ctaEyebrow,
+    ctaTitle: total.ctaTitle,
+    ctaBtn: total.ctaBtn,
   }
+  const STEPS = stepsSection.steps
 
   const rootRef = useRef<HTMLDivElement>(null)
 

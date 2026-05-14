@@ -5,7 +5,6 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Link from 'next/link'
 import Image from 'next/image'
-import { useLanguage } from '@/lib/LanguageContext'
 import { translations } from '@/lib/translations'
 import type { PageContent, PageSection } from '@/content/schema'
 
@@ -32,52 +31,40 @@ function findSection<T extends PageSection['type']>(sections: PageSection[], typ
 }
 
 export default function AboutClient({ enContent }: { enContent: PageContent }) {
-  const { lang } = useLanguage()
+  const hero = findSection(enContent.sections, 'about-hero')!
+  const bio = findSection(enContent.sections, 'about-bio')!
+  const creds = findSection(enContent.sections, 'about-credentials')!
+  const principles = findSection(enContent.sections, 'about-principles')!
+  const cta = findSection(enContent.sections, 'about-cta')!
 
-  let t: typeof translations['en']['about']
-  let CREDENTIALS: typeof translations['en']['aboutCredentials']
-  let PRINCIPLES: typeof translations['en']['aboutPrinciples']
-
-  if (lang === 'en') {
-    const hero = findSection(enContent.sections, 'about-hero')!
-    const bio = findSection(enContent.sections, 'about-bio')!
-    const creds = findSection(enContent.sections, 'about-credentials')!
-    const principles = findSection(enContent.sections, 'about-principles')!
-    const cta = findSection(enContent.sections, 'about-cta')!
-
-    t = {
-      eyebrow: hero.eyebrow,
-      heroTitle: hero.heroTitle,
-      heroSubtitle: hero.heroSubtitle,
-      // heroStats used as [val, label][] — adapt from {id,stat,label}[]
-      heroStats: hero.heroStats.map(s => [s.stat, s.label] as [string, string]),
-      linkedIn: hero.linkedIn,
-      manifestoQuotes: hero.manifestoQuotes,
-      whoIAmEyebrow: bio.whoIAmEyebrow,
-      hiName: bio.hiName,
-      bio1: bio.bio1,
-      bio2: bio.bio2,
-      bio3: bio.bio3,
-      startConversation: bio.startConversation,
-      relevantBackgroundEyebrow: creds.relevantBackgroundEyebrow,
-      relevantBackgroundTitle: creds.relevantBackgroundTitle,
-      whyStartedEyebrow: principles.whyStartedEyebrow,
-      whyStartedTitle: principles.whyStartedTitle,
-      whyStarted1: principles.whyStarted1,
-      whyStarted2: principles.whyStarted2,
-      whyStarted3: principles.whyStarted3,
-      workTogetherEyebrow: cta.workTogetherEyebrow,
-      ctaTitle: cta.ctaTitle,
-      ctaTitleHighlight: cta.ctaTitleHighlight,
-      getInTouch: cta.getInTouch,
-    }
-    CREDENTIALS = creds.credentials as typeof CREDENTIALS
-    PRINCIPLES = principles.principles as typeof PRINCIPLES
-  } else {
-    t = translations.fi.about
-    CREDENTIALS = translations.fi.aboutCredentials
-    PRINCIPLES = translations.fi.aboutPrinciples
+  const t: typeof translations['en']['about'] = {
+    eyebrow: hero.eyebrow,
+    heroTitle: hero.heroTitle,
+    heroSubtitle: hero.heroSubtitle,
+    // heroStats used as [val, label][] — adapt from {id,stat,label}[]
+    heroStats: hero.heroStats.map(s => [s.stat, s.label] as [string, string]),
+    linkedIn: hero.linkedIn,
+    manifestoQuotes: hero.manifestoQuotes,
+    whoIAmEyebrow: bio.whoIAmEyebrow,
+    hiName: bio.hiName,
+    bio1: bio.bio1,
+    bio2: bio.bio2,
+    bio3: bio.bio3,
+    startConversation: bio.startConversation,
+    relevantBackgroundEyebrow: creds.relevantBackgroundEyebrow,
+    relevantBackgroundTitle: creds.relevantBackgroundTitle,
+    whyStartedEyebrow: principles.whyStartedEyebrow,
+    whyStartedTitle: principles.whyStartedTitle,
+    whyStarted1: principles.whyStarted1,
+    whyStarted2: principles.whyStarted2,
+    whyStarted3: principles.whyStarted3,
+    workTogetherEyebrow: cta.workTogetherEyebrow,
+    ctaTitle: cta.ctaTitle,
+    ctaTitleHighlight: cta.ctaTitleHighlight,
+    getInTouch: cta.getInTouch,
   }
+  const CREDENTIALS = creds.credentials as typeof translations['en']['aboutCredentials']
+  const PRINCIPLES = principles.principles as typeof translations['en']['aboutPrinciples']
 
   const rootRef = useRef<HTMLDivElement>(null)
 
@@ -118,7 +105,7 @@ export default function AboutClient({ enContent }: { enContent: PageContent }) {
       })
     }, rootRef)
     return () => ctx.revert()
-  }, [lang])
+  }, [])
 
   return (
     <div ref={rootRef}>

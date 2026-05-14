@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { upload } from '@vercel/blob/client'
 import { useLanguage } from '@/lib/LanguageContext'
-import { translations } from '@/lib/translations'
 import type { PageContent, PageSection } from '@/content/schema'
 
 const MAX_FILE_SIZE_MB = 50
@@ -13,52 +12,47 @@ function findSection<T extends PageSection['type']>(sections: PageSection[], typ
   return sections.find(s => s.type === type) as Extract<PageSection, { type: T }> | undefined
 }
 
-export default function ContactClient({ enContent }: { enContent: PageContent }) {
+export default function ContactClient({ enContent, fiContent }: { enContent: PageContent; fiContent: PageContent }) {
   const { lang } = useLanguage()
+  const content = lang === 'fi' ? fiContent : enContent
+  const hero = findSection(content.sections, 'contact-hero')!
 
-  let t: typeof translations['en']['contact']
-
-  if (lang === 'en') {
-    const hero = findSection(enContent.sections, 'contact-hero')!
-    t = {
-      eyebrow: hero.eyebrow,
-      heroTitle: hero.heroTitle,
-      heroSubtitle: hero.heroSubtitle,
-      twoWaysTitle: hero.twoWaysTitle,
-      optionALabel: hero.optionALabel,
-      optionATitle: hero.optionATitle,
-      optionADesc: hero.optionADesc,
-      optionBLabel: hero.optionBLabel,
-      optionBTitle: hero.optionBTitle,
-      optionBDesc: hero.optionBDesc,
-      replyTime: hero.replyTime,
-      demoRequestTitle: hero.demoRequestTitle,
-      demoRequestBody: hero.demoRequestBody,
-      tabQuestion: hero.tabQuestion,
-      tabDemo: hero.tabDemo,
-      labelName: hero.labelName,
-      labelCompany: hero.labelCompany,
-      labelEmail: hero.labelEmail,
-      labelSite: hero.labelSite,
-      labelFiles: hero.labelFiles,
-      optional: hero.optional,
-      optionalMaxFile: hero.optionalMaxFile,
-      dropFiles: hero.dropFiles,
-      dropFilesHint: hero.dropFilesHint,
-      labelMessageDemo: hero.labelMessageDemo,
-      labelMessageQuestion: hero.labelMessageQuestion,
-      placeholderDemo: hero.placeholderDemo,
-      placeholderQuestion: hero.placeholderQuestion,
-      requiredFields: hero.requiredFields,
-      sending: hero.sending,
-      sendDemo: hero.sendDemo,
-      sendInquiry: hero.sendInquiry,
-      successTitle: hero.successTitle,
-      successBody: hero.successBody,
-      errorMsg: hero.errorMsg,
-    }
-  } else {
-    t = translations.fi.contact
+  const t = {
+    eyebrow: hero.eyebrow,
+    heroTitle: hero.heroTitle,
+    heroSubtitle: hero.heroSubtitle,
+    twoWaysTitle: hero.twoWaysTitle,
+    optionALabel: hero.optionALabel,
+    optionATitle: hero.optionATitle,
+    optionADesc: hero.optionADesc,
+    optionBLabel: hero.optionBLabel,
+    optionBTitle: hero.optionBTitle,
+    optionBDesc: hero.optionBDesc,
+    replyTime: hero.replyTime,
+    demoRequestTitle: hero.demoRequestTitle,
+    demoRequestBody: hero.demoRequestBody,
+    tabQuestion: hero.tabQuestion,
+    tabDemo: hero.tabDemo,
+    labelName: hero.labelName,
+    labelCompany: hero.labelCompany,
+    labelEmail: hero.labelEmail,
+    labelSite: hero.labelSite,
+    labelFiles: hero.labelFiles,
+    optional: hero.optional,
+    optionalMaxFile: hero.optionalMaxFile,
+    dropFiles: hero.dropFiles,
+    dropFilesHint: hero.dropFilesHint,
+    labelMessageDemo: hero.labelMessageDemo,
+    labelMessageQuestion: hero.labelMessageQuestion,
+    placeholderDemo: hero.placeholderDemo,
+    placeholderQuestion: hero.placeholderQuestion,
+    requiredFields: hero.requiredFields,
+    sending: hero.sending,
+    sendDemo: hero.sendDemo,
+    sendInquiry: hero.sendInquiry,
+    successTitle: hero.successTitle,
+    successBody: hero.successBody,
+    errorMsg: hero.errorMsg,
   }
 
   const rootRef = useRef<HTMLDivElement>(null)

@@ -53,7 +53,7 @@ export default function Nav() {
             <Link href="/process" className={`nav-link${pathname === '/process' ? ' active' : ''}`}>{t.process}</Link>
             <Link href="/work" className={`nav-link${pathname.startsWith('/work') ? ' active' : ''}`}>{t.work}</Link>
             <Link href="/pricing" className={`nav-link${pathname === '/pricing' ? ' active' : ''}`}>{t.pricing}</Link>
-            <Link href="/about" className={`nav-link${pathname === '/about' ? ' active' : ''}`}>{t.about}</Link>
+            {lang !== 'fi' && <Link href="/about" className={`nav-link${pathname === '/about' ? ' active' : ''}`}>{t.about}</Link>}
             <Link href="/faq" className={`nav-link${pathname === '/faq' ? ' active' : ''}`}>{t.faq}</Link>
             <Link href="/blog" className={`nav-link${pathname.startsWith('/blog') ? ' active' : ''}`}>{t.blog}</Link>
           </nav>
@@ -97,7 +97,7 @@ export default function Nav() {
         <Link href="/process" className="nav-mobile-link" onClick={closeMenu}>{t.process}</Link>
         <Link href="/work" className="nav-mobile-link" onClick={closeMenu}>{t.work}</Link>
         <Link href="/pricing" className="nav-mobile-link" onClick={closeMenu}>{t.pricing}</Link>
-        <Link href="/about" className="nav-mobile-link" onClick={closeMenu}>{t.about}</Link>
+        {lang !== 'fi' && <Link href="/about" className="nav-mobile-link" onClick={closeMenu}>{t.about}</Link>}
         <Link href="/faq" className="nav-mobile-link" onClick={closeMenu}>{t.faq}</Link>
         <Link href="/blog" className="nav-mobile-link" onClick={closeMenu}>{t.blog}</Link>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '1rem 2rem' }}>

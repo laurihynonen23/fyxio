@@ -1,0 +1,141 @@
+{
+  "key": "home",
+  "locale": "fi",
+  "route": "/",
+  "metadata": {
+    "title": "Fyxio — Premium-verkkosivut, nopeasti toteutettu",
+    "description": "Premium-verkkosivut yrityksille, jotka haluavat parempaa kuin 'ihan ok'. Mukautetut rakennukset, uudistukset ja WordPress-migraatiot."
+  },
+  "sections": [
+    {
+      "id": "hero",
+      "type": "home-hero",
+      "visible": true,
+      "eyebrow": "Verkkosivut & AI-palvelut",
+      "heroTitle": ["Premium", "verkkosivut,", "nopeasti."],
+      "heroBadge": "Useimmat projektit toimitetaan",
+      "heroBadgeHighlight": "24–48 tunnissa",
+      "heroSubtitle": "Yrityksille, jotka haluavat vahvemman, modernimman ja helpommin hallinnoitavan verkkosivuston — ilman tavanomaista 6 viikon toimistoaikataulua.",
+      "heroCta1": "Aloita projekti",
+      "heroCta2": "Katso töitä",
+      "scroll": "Vieritä",
+      "marqueeItems": ["Mukautetut verkkosivut", "Uudistukset", "WordPress-migraatio", "Hosting & julkaisu", "24 tunnin toimitus", "Täysi omistajuus", "Ei malleja"]
+    },
+    {
+      "id": "why",
+      "type": "home-why",
+      "visible": true,
+      "eyebrow": "Miksi Fyxio",
+      "title": "Verkkosivustosi valmiina",
+      "titleHighlight": "24–48 tunnissa.",
+      "body": "Useimmat toimistot ottavat 6–12 viikkoa. Työskentelen tehostetuissa sprinteissä — yksi projekti kerrallaan, ei kontekstin vaihtoa, ei sisäisiä siirtoja. Tuloksena on nopeampi toimitus tinkimättä laadusta.",
+      "stats": [
+        { "id": "stat-1", "num": "24t", "label": "Ensimmäinen luonnos toimitettu" },
+        { "id": "stat-2", "num": "1", "label": "Projekti kerrallaan" },
+        { "id": "stat-3", "num": "100%", "label": "Koodin omistajuus" },
+        { "id": "stat-4", "num": "0", "label": "Riippuvuuksia" }
+      ]
+    },
+    {
+      "id": "value",
+      "type": "home-value",
+      "visible": true,
+      "eyebrow": "Mitä uskomme",
+      "statement": ["Verkkosivustosi on ", "ensivaikutelma", "."],
+      "statement2": "Sen pitäisi ansaita huomio",
+      "statement3": "kolmessa sekunnissa."
+    },
+    {
+      "id": "services",
+      "type": "home-services",
+      "visible": true,
+      "eyebrow": "Mitä teen",
+      "title": "Verkkosivut ja AI.",
+      "title2": "Yksi selkeä fokus.",
+      "serviceLabel": "PALVELU",
+      "learnMore": "Lue lisää",
+      "items": [
+        {
+          "id": "svc-1",
+          "num": "01",
+          "title": "Mukautetut verkkosivut",
+          "desc": "Yrityksille, jotka haluavat modernin verkkosivuston tyhjästä — ei mallia logon vaihdolla. Suunniteltu yrityksesi, tarjouksesi ja sen ympärille, miten haluat tulla nähdyksi.",
+          "tags": ["Muotoilukeskeinen", "Täysi omistajuus", "Nopea toimitus"],
+          "img": "/hero-main.png",
+          "href": "/services/custom-websites"
+        },
+        {
+          "id": "svc-2",
+          "num": "02",
+          "title": "Verkkosivuston kokonaisuudistus",
+          "desc": "Yrityksille, joilla on jo verkkosivusto, joka ei enää tunnu riittävän hyvältä. Pohdi rakenne, viestintä, visuaalinen ilme ja muokkausasetukset uudelleen — rakenna jotain, joka todella tukee liiketoimintaa.",
+          "tags": ["Visuaalinen auditointi", "Uusi arkkitehtuuri", "Puhdas julkaisu"],
+          "img": "/redesign-hero.png",
+          "href": "/services/website-redesign"
+        },
+        {
+          "id": "svc-3",
+          "num": "03",
+          "title": "AI-rakennussessiot",
+          "desc": "Tehokas käytännön sessio, jossa rakennan Claude Code tai Codex -ympäristön projektiisi ja opetan sinulle, kuinka tehdä todellisia muutoksia itse — sivustoosi tai mihin tahansa muuhun.",
+          "tags": ["Claude Code -asennus", "Live-läpikäynti", "Oikea projekti"],
+          "img": "/ai-build-session-setup.png",
+          "href": "/services/ai-build-sessions"
+        },
+        {
+          "id": "svc-4",
+          "num": "04",
+          "title": "Mukautetut AI-työnkulut",
+          "desc": "Autan tunnistamaan manuaaliset, toistuvat tai korkean arvon työnkulut ja rakentamaan käytännöllisiä AI-avusteisia ratkaisuja niiden ympärille — sisältöjärjestelmät, sisäiset työkalut, automaatiovirrat.",
+          "tags": ["Työnkulun kartoitus", "Käytännöllinen rakennus", "Tiimin luovutus"],
+          "img": "/ai-workflows-hero.png",
+          "href": "/services/ai-workflows"
+        }
+      ]
+    },
+    {
+      "id": "process",
+      "type": "home-process",
+      "visible": true,
+      "eyebrow": "Miten toimii",
+      "title": "Ensimmäinen luonnos 24 tunnissa.",
+      "title2": "Live 48 tunnissa.",
+      "seeFullProcess": "Katso koko prosessi →",
+      "steps": [
+        { "id": "step-1", "num": "01", "title": "Materiaalit & suunta", "text": "Lähetät olennaiset — tekstit, kuvat, logo-tiedostot, referenssit ja suunnan. Mitä selkeämmät materiaalit, sitä nopeammin kaikki liikkuu." },
+        { "id": "step-2", "num": "02", "title": "Ensimmäinen luonnosrakennus", "text": "Kun materiaalit ovat paikallaan, rakennan todellisen sivuston — ei hahmomalleja, ei pitkää suunnitteluvaihetta. Yleensä valmis 1–2 päivässä." },
+        { "id": "step-3", "num": "03", "title": "Yksi viimeistelydirektiivi", "text": "Katsot luonnoksen ja annat yhden selkeän palautekierroksen. Hionnan perusteella. Ei loputtomia revisiosilmukoita." },
+        { "id": "step-4", "num": "04", "title": "Julkaisu & luovutus", "text": "Sivusto julkaistaan, kaikki tarkistetaan, ja saat täyden omistajuuden koodiin, domainiin ja hosting-asetuksiin." }
+      ]
+    },
+    {
+      "id": "work",
+      "type": "home-work",
+      "visible": true,
+      "eyebrow": "Valikoitu työ",
+      "title": "Rakennettu yrityksille",
+      "title2": "kaikilla toimialoilla.",
+      "viewMyWork": "Katso töitäni",
+      "caseStudyTag": "Mukautettu verkkosivusto — Athlos Oy",
+      "caseStudyTitle": "Röntgenkuvausyritys, Suomi",
+      "caseStudyDesc": "Premium-verkkosivusto, selkeä rakenne, uskottava muotoilu, täysi julkaisuvalmistelu. Toimitettu 3 päivässä.",
+      "visitSite": "Vieraile sivulla athlos.fi",
+      "builtForBusinesses": "Rakennettu yrityksille kuten sinun",
+      "clients": [
+        "Terveydenhuoltoyritys", "Lakitoimisto", "Arkkitehtitoimisto", "SaaS-yritys",
+        "Konsultointiyritys", "Verkkokauppa", "Teknologiatoimisto", "Taloudellinen neuvonantaja",
+        "Luova studio", "Valmistusyritys", "Kiinteistöyritys", "Lääkäriklinikka"
+      ]
+    },
+    {
+      "id": "cta",
+      "type": "home-cta",
+      "visible": true,
+      "eyebrow": "Valmis aloittamaan?",
+      "ctaTitle": ["Useimmat sivustot live", "24–48 tunnissa."],
+      "ctaSub": "Lähetä minulle briefisi ja materiaalisi. Mitä nopeammin liikut, sitä nopeammin se on live.",
+      "startConversation": "Aloita keskustelu",
+      "replyNote": "Vastaus muutaman tunnin sisällä"
+    }
+  ]
+}

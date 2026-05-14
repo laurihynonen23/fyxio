@@ -1,0 +1,44 @@
+{
+  "key": "services",
+  "locale": "fi",
+  "route": "/services",
+  "metadata": {
+    "title": "Palvelut — Fyxio",
+    "description": "Verkkosivusto- ja AI-palvelut yrityksille, jotka haluavat edetä nopeammin."
+  },
+  "sections": [
+    {
+      "id": "hero",
+      "type": "services-hero",
+      "visible": true,
+      "eyebrow": "Palvelut",
+      "heroTitle": ["Verkkosivusto- ja AI-palvelut", "yrityksille, jotka", "haluavat edetä nopeammin."],
+      "heroSub": "Rakennan moderneja verkkosivustoja, uudistan vanhentuneita ja autan tiimejä käyttämään AI-työkaluja luomiseen, muokkaamiseen, automatisointiin ja töiden toimittamiseen paljon nopeammin kuin ennen."
+    },
+    {
+      "id": "website",
+      "type": "services-website",
+      "visible": true,
+      "websiteEyebrow": "Verkkosivustopalvelut",
+      "websiteTitle": "Modernit verkkosivustot nopeasti toteutettuina.",
+      "websiteSub": "Puhdas julkaisu, hosting- ja omistajuusvaihtoehdot sekä käytännöllinen muokkausratkaisu mukana jokaisessa projektissa.",
+      "learnMore": "Lue lisää"
+    },
+    {
+      "id": "ai",
+      "type": "services-ai",
+      "visible": true,
+      "aiEyebrow": "AI-palvelut",
+      "aiTitle": "Käytännön AI-tuki rakentamiseen,\nmuokkaamiseen ja automatisointiin.",
+      "aiSub": "Autan yrityksiä käyttämään AI-työkaluja käytännöllisesti — rakentamiseen, muokkaamiseen, automatisointiin ja parempien tulosten luomiseen nopeammin."
+    },
+    {
+      "id": "cta",
+      "type": "services-cta",
+      "visible": true,
+      "ctaEyebrow": "Et ole varma, mikä sopii?",
+      "ctaTitle": "Kerro nykytilanteestasi.",
+      "ctaBtn": "Kysy projektistasi"
+    }
+  ]
+}

@@ -12,16 +12,25 @@ export const PAGE_DEFINITIONS: Array<{
   route: string
   fileName: string
 }> = [
-  { key: 'home',     locale: 'en', label: 'Home',     route: '/',        fileName: 'home.json' },
-  { key: 'about',    locale: 'en', label: 'About',    route: '/about',   fileName: 'about.json' },
-  { key: 'contact',  locale: 'en', label: 'Contact',  route: '/contact', fileName: 'contact.json' },
-  { key: 'faq',      locale: 'en', label: 'FAQ',      route: '/faq',     fileName: 'faq.json' },
-  { key: 'insights', locale: 'en', label: 'Insights', route: '/insights',fileName: 'insights.json' },
-  { key: 'blog',     locale: 'en', label: 'Blog',     route: '/blog',    fileName: 'blog.json' },
-  { key: 'pricing',  locale: 'en', label: 'Pricing',  route: '/pricing', fileName: 'pricing.json' },
-  { key: 'process',  locale: 'en', label: 'Process',  route: '/process', fileName: 'process.json' },
-  { key: 'services', locale: 'en', label: 'Services', route: '/services',fileName: 'services.json' },
-  { key: 'work',     locale: 'en', label: 'Work',     route: '/work',    fileName: 'work.json' },
+  { key: 'home',     locale: 'en', label: 'Home',        route: '/',        fileName: 'home.json' },
+  { key: 'about',    locale: 'en', label: 'About',       route: '/about',   fileName: 'about.json' },
+  { key: 'contact',  locale: 'en', label: 'Contact',     route: '/contact', fileName: 'contact.json' },
+  { key: 'faq',      locale: 'en', label: 'FAQ',         route: '/faq',     fileName: 'faq.json' },
+  { key: 'insights', locale: 'en', label: 'Insights',    route: '/insights',fileName: 'insights.json' },
+  { key: 'blog',     locale: 'en', label: 'Blog',        route: '/blog',    fileName: 'blog.json' },
+  { key: 'pricing',  locale: 'en', label: 'Pricing',     route: '/pricing', fileName: 'pricing.json' },
+  { key: 'process',  locale: 'en', label: 'Process',     route: '/process', fileName: 'process.json' },
+  { key: 'services', locale: 'en', label: 'Services',    route: '/services',fileName: 'services.json' },
+  { key: 'work',     locale: 'en', label: 'Work',        route: '/work',    fileName: 'work.json' },
+  { key: 'home',     locale: 'fi', label: 'Etusivu',     route: '/',        fileName: 'home.json' },
+  { key: 'contact',  locale: 'fi', label: 'Yhteystiedot',route: '/contact', fileName: 'contact.json' },
+  { key: 'faq',      locale: 'fi', label: 'UKK',         route: '/faq',     fileName: 'faq.json' },
+  { key: 'insights', locale: 'fi', label: 'Artikkelit',  route: '/insights',fileName: 'insights.json' },
+  { key: 'blog',     locale: 'fi', label: 'Blogi',       route: '/blog',    fileName: 'blog.json' },
+  { key: 'pricing',  locale: 'fi', label: 'Hinnoittelu', route: '/pricing', fileName: 'pricing.json' },
+  { key: 'process',  locale: 'fi', label: 'Prosessi',    route: '/process', fileName: 'process.json' },
+  { key: 'services', locale: 'fi', label: 'Palvelut',    route: '/services',fileName: 'services.json' },
+  { key: 'work',     locale: 'fi', label: 'Projektit',   route: '/work',    fileName: 'work.json' },
 ]
 
 export const FYXIO_SITE_CONFIG = {

@@ -69,7 +69,7 @@ export async function loadPublishedBundle(): Promise<FyxioContentBundle> {
   }
 
   const site = siteSettingsSchema.parse(await readJsonFile(contentPath('site.json')))
-  const locales: FyxioContentBundle['locales'] = { en: {} }
+  const locales: FyxioContentBundle['locales'] = { en: {}, fi: {} }
 
   for (const def of PAGE_DEFINITIONS) {
     const content = pageContentSchema.parse(
@@ -83,6 +83,13 @@ export async function loadPublishedBundle(): Promise<FyxioContentBundle> {
 
 export async function loadDraftBundle(draftId: string) {
   try {
+    // If CMS is on a different account, fetch draft bundle via CMS API
+    const cmsUrl = process.env.CMS_CONTENT_URL
+    if (cmsUrl) {
+      const res = await fetch(`${cmsUrl}/api/cms-draft/${draftId}`, { cache: 'no-store' })
+      if (res.ok) return fyxioContentBundleSchema.parse(await res.json())
+    }
+
     if (process.env.BLOB_READ_WRITE_TOKEN) {
       const prefix = `cms/drafts/${draftId}`.replace(/\.json$/, '')
       const { blobs } = await list({ prefix })

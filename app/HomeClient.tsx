@@ -6,7 +6,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useLanguage } from '@/lib/LanguageContext'
-import { translations } from '@/lib/translations'
 import type { PageContent, PageSection } from '@/content/schema'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -21,76 +20,65 @@ function findSection<T extends PageSection['type']>(sections: PageSection[], typ
   return sections.find(s => s.type === type) as Extract<PageSection, { type: T }> | undefined
 }
 
-export default function HomeClient({ enContent }: { enContent: PageContent }) {
+export default function HomeClient({ enContent, fiContent }: { enContent: PageContent; fiContent: PageContent }) {
   const { lang } = useLanguage()
+  const content = lang === 'fi' ? fiContent : enContent
 
-  let t: typeof translations['en']['home']
-  let SERVICES: typeof translations['en']['homeServices']
-  let STEPS: typeof translations['en']['homeSteps']
-  let CLIENTS: typeof translations['en']['homeClients']
+  const hero = findSection(content.sections, 'home-hero')!
+  const why = findSection(content.sections, 'home-why')!
+  const value = findSection(content.sections, 'home-value')!
+  const svcs = findSection(content.sections, 'home-services')!
+  const proc = findSection(content.sections, 'home-process')!
+  const work = findSection(content.sections, 'home-work')!
+  const cta = findSection(content.sections, 'home-cta')!
 
-  if (lang === 'en') {
-    const hero = findSection(enContent.sections, 'home-hero')!
-    const why = findSection(enContent.sections, 'home-why')!
-    const value = findSection(enContent.sections, 'home-value')!
-    const svcs = findSection(enContent.sections, 'home-services')!
-    const proc = findSection(enContent.sections, 'home-process')!
-    const work = findSection(enContent.sections, 'home-work')!
-    const cta = findSection(enContent.sections, 'home-cta')!
-
-    t = {
-      eyebrow: hero.eyebrow,
-      heroTitle: hero.heroTitle,
-      heroTitleLine3: hero.heroTitle.slice(-1),
-      heroBadge: hero.heroBadge,
-      heroBadgeHighlight: hero.heroBadgeHighlight,
-      heroSubtitle: hero.heroSubtitle,
-      heroCta1: hero.heroCta1,
-      heroCta2: hero.heroCta2,
-      scroll: hero.scroll,
-      marqueeItems: hero.marqueeItems,
-      whyEyebrow: why.eyebrow,
-      whyTitle: why.title,
-      whyTitleHighlight: why.titleHighlight,
-      whyBody: why.body,
-      stats: why.stats,
-      believeEyebrow: value.eyebrow,
-      valueStatement: value.statement,
-      valueStatement2: value.statement2,
-      valueStatement3: value.statement3,
-      whatIDoEyebrow: svcs.eyebrow,
-      whatIDoTitle: svcs.title,
-      whatIDoTitle2: svcs.title2,
-      serviceLabel: svcs.serviceLabel,
-      learnMore: svcs.learnMore,
-      howItWorksEyebrow: proc.eyebrow,
-      processTitle: proc.title,
-      processTitle2: proc.title2,
-      seeFullProcess: proc.seeFullProcess,
-      selectedWorkEyebrow: work.eyebrow,
-      selectedWorkTitle: work.title,
-      selectedWorkTitle2: work.title2,
-      viewMyWork: work.viewMyWork,
-      caseStudyTag: work.caseStudyTag,
-      caseStudyTitle: work.caseStudyTitle,
-      caseStudyDesc: work.caseStudyDesc,
-      visitSite: work.visitSite,
-      builtForBusinesses: work.builtForBusinesses,
-      readyEyebrow: cta.eyebrow,
-      ctaTitle: cta.ctaTitle,
-      ctaSub: cta.ctaSub,
-      startConversation: cta.startConversation,
-      replyNote: cta.replyNote,
-    }
-    SERVICES = svcs.items as typeof SERVICES
-    STEPS = proc.steps.map(s => ({ num: s.num, title: s.title, text: s.text })) as typeof STEPS
-    CLIENTS = work.clients
-  } else {
-    t = translations.fi.home
-    SERVICES = translations.fi.homeServices
-    STEPS = translations.fi.homeSteps
-    CLIENTS = translations.fi.homeClients
+  const t = {
+    eyebrow: hero.eyebrow,
+    heroTitle: hero.heroTitle,
+    heroTitleLine3: hero.heroTitle.slice(-1),
+    heroBadge: hero.heroBadge,
+    heroBadgeHighlight: hero.heroBadgeHighlight,
+    heroSubtitle: hero.heroSubtitle,
+    heroCta1: hero.heroCta1,
+    heroCta2: hero.heroCta2,
+    scroll: hero.scroll,
+    marqueeItems: hero.marqueeItems,
+    whyEyebrow: why.eyebrow,
+    whyTitle: why.title,
+    whyTitleHighlight: why.titleHighlight,
+    whyBody: why.body,
+    stats: why.stats,
+    believeEyebrow: value.eyebrow,
+    valueStatement: value.statement,
+    valueStatement2: value.statement2,
+    valueStatement3: value.statement3,
+    whatIDoEyebrow: svcs.eyebrow,
+    whatIDoTitle: svcs.title,
+    whatIDoTitle2: svcs.title2,
+    serviceLabel: svcs.serviceLabel,
+    learnMore: svcs.learnMore,
+    howItWorksEyebrow: proc.eyebrow,
+    processTitle: proc.title,
+    processTitle2: proc.title2,
+    seeFullProcess: proc.seeFullProcess,
+    selectedWorkEyebrow: work.eyebrow,
+    selectedWorkTitle: work.title,
+    selectedWorkTitle2: work.title2,
+    viewMyWork: work.viewMyWork,
+    caseStudyTag: work.caseStudyTag,
+    caseStudyTitle: work.caseStudyTitle,
+    caseStudyDesc: work.caseStudyDesc,
+    visitSite: work.visitSite,
+    builtForBusinesses: work.builtForBusinesses,
+    readyEyebrow: cta.eyebrow,
+    ctaTitle: cta.ctaTitle,
+    ctaSub: cta.ctaSub,
+    startConversation: cta.startConversation,
+    replyNote: cta.replyNote,
   }
+  const SERVICES = svcs.items
+  const STEPS = proc.steps.map(s => ({ num: s.num, title: s.title, text: s.text }))
+  const CLIENTS = work.clients
 
   const heroRef = useRef<HTMLElement>(null)
   const heroPhotoRef = useRef<HTMLDivElement>(null)

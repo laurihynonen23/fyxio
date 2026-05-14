@@ -4,33 +4,26 @@ import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import Image from 'next/image'
 import { useLanguage } from '@/lib/LanguageContext'
-import { translations } from '@/lib/translations'
 import type { PageContent, PageSection } from '@/content/schema'
 
 function findSection<T extends PageSection['type']>(sections: PageSection[], type: T): Extract<PageSection, { type: T }> | undefined {
   return sections.find(s => s.type === type) as Extract<PageSection, { type: T }> | undefined
 }
 
-export default function BlogClient({ enContent }: { enContent: PageContent }) {
+export default function BlogClient({ enContent, fiContent }: { enContent: PageContent; fiContent: PageContent }) {
   const { lang } = useLanguage()
+  const content = lang === 'fi' ? fiContent : enContent
 
-  let t: typeof translations['en']['blog']
-  let ARTICLES: typeof translations['en']['blogArticles']
+  const hero = findSection(content.sections, 'blog-hero')!
+  const arts = findSection(content.sections, 'blog-articles')!
 
-  if (lang === 'en') {
-    const hero = findSection(enContent.sections, 'blog-hero')!
-    const arts = findSection(enContent.sections, 'blog-articles')!
-    t = {
-      eyebrow: hero.eyebrow,
-      heroTitle: hero.heroTitle,
-      heroSub: hero.heroSub,
-      comingSoon: hero.comingSoon,
-    }
-    ARTICLES = arts.articles as typeof ARTICLES
-  } else {
-    t = translations.fi.blog
-    ARTICLES = translations.fi.blogArticles
+  const t = {
+    eyebrow: hero.eyebrow,
+    heroTitle: hero.heroTitle,
+    heroSub: hero.heroSub,
+    comingSoon: hero.comingSoon,
   }
+  const ARTICLES = arts.articles
 
   const rootRef = useRef<HTMLDivElement>(null)
 

@@ -5,7 +5,6 @@ import { gsap } from 'gsap'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useLanguage } from '@/lib/LanguageContext'
-import { translations } from '@/lib/translations'
 import type { PageContent, PageSection } from '@/content/schema'
 
 const Arrow = () => (
@@ -18,27 +17,21 @@ function findSection<T extends PageSection['type']>(sections: PageSection[], typ
   return sections.find(s => s.type === type) as Extract<PageSection, { type: T }> | undefined
 }
 
-export default function FAQClient({ enContent }: { enContent: PageContent }) {
+export default function FAQClient({ enContent, fiContent }: { enContent: PageContent; fiContent: PageContent }) {
   const { lang } = useLanguage()
+  const content = lang === 'fi' ? fiContent : enContent
 
-  let t: typeof translations['en']['faq']
-  let FAQS: typeof translations['en']['faqItems']
+  const hero = findSection(content.sections, 'faq-hero')!
+  const items = findSection(content.sections, 'faq-items')!
 
-  if (lang === 'en') {
-    const hero = findSection(enContent.sections, 'faq-hero')!
-    const items = findSection(enContent.sections, 'faq-items')!
-    t = {
-      eyebrow: hero.eyebrow,
-      heroTitle: hero.heroTitle,
-      heroSub: hero.heroSub,
-      stillHaveQuestion: hero.stillHaveQuestion,
-      sendDirectly: hero.sendDirectly,
-    }
-    FAQS = items.groups as typeof FAQS
-  } else {
-    t = translations.fi.faq
-    FAQS = translations.fi.faqItems
+  const t = {
+    eyebrow: hero.eyebrow,
+    heroTitle: hero.heroTitle,
+    heroSub: hero.heroSub,
+    stillHaveQuestion: hero.stillHaveQuestion,
+    sendDirectly: hero.sendDirectly,
   }
+  const FAQS = items.groups
 
   const rootRef = useRef<HTMLDivElement>(null)
   const [openItems, setOpenItems] = useState<Record<string, boolean>>({ '0-0': true })

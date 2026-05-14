@@ -5,7 +5,6 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Link from 'next/link'
 import { useLanguage } from '@/lib/LanguageContext'
-import { translations } from '@/lib/translations'
 import type { PageContent, PageSection } from '@/content/schema'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -20,26 +19,20 @@ function findSection<T extends PageSection['type']>(sections: PageSection[], typ
   return sections.find(s => s.type === type) as Extract<PageSection, { type: T }> | undefined
 }
 
-export default function InsightsClient({ enContent }: { enContent: PageContent }) {
+export default function InsightsClient({ enContent, fiContent }: { enContent: PageContent; fiContent: PageContent }) {
   const { lang } = useLanguage()
+  const content = lang === 'fi' ? fiContent : enContent
 
-  let t: typeof translations['en']['insights']
-  let ARTICLES: typeof translations['en']['insightArticles']
+  const hero = findSection(content.sections, 'insights-hero')!
+  const arts = findSection(content.sections, 'insights-articles')!
 
-  if (lang === 'en') {
-    const hero = findSection(enContent.sections, 'insights-hero')!
-    const arts = findSection(enContent.sections, 'insights-articles')!
-    t = {
-      eyebrow: hero.eyebrow,
-      heroTitle: hero.heroTitle,
-      heroSub: hero.heroSub,
-      readArticle: hero.readArticle,
-    }
-    ARTICLES = arts.articles as typeof ARTICLES
-  } else {
-    t = translations.fi.insights
-    ARTICLES = translations.fi.insightArticles
+  const t = {
+    eyebrow: hero.eyebrow,
+    heroTitle: hero.heroTitle,
+    heroSub: hero.heroSub,
+    readArticle: hero.readArticle,
   }
+  const ARTICLES = arts.articles
 
   const rootRef = useRef<HTMLDivElement>(null)
 
